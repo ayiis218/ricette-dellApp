@@ -1,16 +1,17 @@
-// import logo from './logo.svg';
-// import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js';
-
 import React from 'react';
+/* import Router from './router/index';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Provider } from 'react-redux';
+import { store, persistor } from './redux/store';
+import { PersistGate } from 'redux-persist/integration/react'; */
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 //Pages
 import Profile from './pages/Profile'
 import Login from './pages/Login'
 import Register from './pages/Register'
-import Landing from './pages/LandingPage'
+import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -18,10 +19,9 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/'>
-          <Route index element = {<home />} />
+          <Route index element = {<Home />} />
           <Route path = 'register' element = {<Register />} />
           <Route path = 'login' element = {<Login />} />
-          <Route path = 'landing' element = {<Landing />} />
           <Route path = 'profile' element = {<Profile />} />
           <Route path = '*' element = {<NotFound />} />
         </Route>
@@ -29,3 +29,9 @@ export default function App() {
     </BrowserRouter>
    )
 }
+
+{/* <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <Router />
+      </PersistGate>
+    </Provider> */}

@@ -2,7 +2,9 @@ import React from "react";
 import { Form } from "react-bootstrap";
 
 function Field(props) {
-  const { 
+  const {
+    type: Type,
+    id: Id,
     placeholder: Placeholder,
     label: Label } = props;
 
@@ -10,7 +12,7 @@ function Field(props) {
     <>
         <Form.Group className="mb-3">
             <Form.Label>{Label}</Form.Label>
-            <Form.Control type="email" placeholder={Placeholder} />
+            <Form.Control type={Type} id={Id} placeholder={Placeholder} />
         </Form.Group>
     </>
   );
