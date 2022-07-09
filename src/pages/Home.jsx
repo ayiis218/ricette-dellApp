@@ -1,17 +1,17 @@
 import React from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
 
-import FormLogin from "../components/organisms/FormLogin";
+import FormLanding from '../components/organisms/FormLanding'
 
 function App() {
   return (
     <div className="App">
       <Card>
-        <Card.Body className="pb-5">
+        <Card.Body className="pb-2">
           <Container>
             <Row>
               <Col lg={12}>
-                <FormLogin />
+                <FormLanding />
               </Col>
             </Row>
           </Container>
