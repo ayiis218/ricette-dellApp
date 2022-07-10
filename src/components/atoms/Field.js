@@ -1,10 +1,8 @@
-import React from "react";
+/* import React from "react";
 import { Form } from "react-bootstrap";
 
-function Field(props) {
+/* function Field(props) {
   const {
-    type: Type,
-    id: Id,
     placeholder: Placeholder,
     label: Label } = props;
 
@@ -12,10 +10,10 @@ function Field(props) {
     <>
         <Form.Group className="mb-3">
             <Form.Label>{Label}</Form.Label>
-            <Form.Control type={Type} id={Id} placeholder={Placeholder} />
+            <Form.Control type="text" placeholder={Placeholder} />
         </Form.Group>
     </>
   );
 }
 
-export default Field;
+export default Field; */
