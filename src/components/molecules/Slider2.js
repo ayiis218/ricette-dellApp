@@ -5,7 +5,7 @@ import {  } from "react-bootstrap";
 
 import AuthStyles from '../../assets/style/AuthStyles';
 
-import NavBar from '../molecules/NavBar'
+import NavBar from '../atoms/NavBar'
 import Search from '../atoms/Search'
 
 function Slider() {

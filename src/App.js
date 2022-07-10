@@ -6,6 +6,7 @@ import { store, persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react'; */
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { ProfileContext } from "./context";
 
 //Pages
 import Profile from './pages/Profile'
@@ -15,18 +16,20 @@ import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 
 export default function App() {
-  return ( 
+  return (
+    <ProfileContext.Provider value={{ name: "ayiis" }}>
     <BrowserRouter>
-      <Routes>
-        <Route path='/'>
-          <Route index element = {<Home />} />
-          <Route path = 'register' element = {<Register />} />
-          <Route path = 'login' element = {<Login />} />
-          <Route path = 'profile' element = {<Profile />} />
-          <Route path = '*' element = {<NotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+          <Routes>
+            <Route path='/'>
+              <Route index element = {<Home />} />
+              <Route path = 'register' element = {<Register />} />
+              <Route path = 'login' element = {<Login />} />
+              <Route path = 'profile' element = {<Profile />} />
+              <Route path = '*' element = {<NotFound />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+    </ProfileContext.Provider>
    )
 }
 

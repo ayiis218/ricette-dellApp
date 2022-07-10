@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 import { Form } from "react-bootstrap";
 
 function Cb(props) {
@@ -12,4 +12,4 @@ function Cb(props) {
   );
 }
 
-export default Cb;
+export default Cb; */

@@ -1,8 +1,14 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
+// import { BiUserCircle } from 'react-icons/bi';
+// import { AiOutlineLogout } from 'react-icons/ai';
 // import PropTypes from "prop-types";
 
+import { ProfileContext } from "../../context";
+
 function NavBar() {
+  const UserConsumer = React.useContext(ProfileContext)
+
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -13,8 +19,8 @@ function NavBar() {
             <Nav.Link href="/profile">Profile</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link eventKey={2} href="/login">
-              Log in
+            <Nav.Link href="/login">
+            {UserConsumer?.name}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

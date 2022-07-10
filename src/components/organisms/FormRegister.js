@@ -7,7 +7,7 @@ import { register } from '../../redux/action/auth';
 
 import AuthStyles from '../../assets/style/AuthStyles';
 
-import Banner from '../atoms/PictureSlide';
+import Picture from '../PictureSlide';
 import Field from "../atoms/Field";
 import Cb from '../atoms/CheckBox'
 
@@ -91,7 +91,7 @@ const FormRegister = () => {
         <AuthStyles />
           <Container>
             <Row>
-              <Banner />
+              <Picture />
               <Col lg="6" className="custom d-flex justify-content-center align-items-center">
                 <div className="col-10 d-flex flex-column justify-content-center align-items-center p-0">
                   <h2 className="main-color title">Let&apos;s Get Started !</h2>

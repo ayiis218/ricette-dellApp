@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
 
-import FormLogin from "../components/organisms/FormLogin";
+import FormLogin from '../components/organisms/FormLogin';
 
 function App() {
   return (
