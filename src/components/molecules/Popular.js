@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 // import AOS from 'aos';
 
-import Default from '../../assets/img/foodone.webp';
+import Default from '../../assets/img/foto1.png';
 
 const Section = styled.section`
   margin-top: 80px;
@@ -160,7 +160,7 @@ function Slider() {
 
   return (
     <Section data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-      <TitleSection className="mb-4 mb-md-5">New Recipe</TitleSection>
+      <TitleSection className="mb-4 mb-md-5">Popular For You ! </TitleSection>
         <Container>
         <Row>
         <Col md="6" className="position-relative">
