@@ -1,5 +1,5 @@
 const Styled = {
-    Footer: {
+    FooterS: {
       height: '100px',
       paddingTop: '200px',
       fontFamily: 'Airbnb Cereal App Light',
@@ -12,7 +12,7 @@ const Styled = {
       justifyContent: 'center',
       alignItems: 'center',
     },
-    FooterTitle: {
+    Title: {
       marginTop: '170px',
       width: '100%',
       textAlign: 'center'
@@ -22,7 +22,7 @@ const Styled = {
       color: '#2E266F',
       fontWeight: 'Bold'
     },
-    FooterDesc: {
+    Description: {
       width: '100%',
       textAlign: 'center'
     },
@@ -31,7 +31,7 @@ const Styled = {
       fontSize: '18px',
       marginTop: '50px'
     },
-    FooterLink: {
+    List: {
       width: '100%',
       display: 'flex',
       justifyContent: 'center',
@@ -39,7 +39,7 @@ const Styled = {
       paddingTop: '150px',
       marginBottom: '0px'
     },
-    FooterLinkSmall: {
+    Item: {
       marginLeft: '20px',
       color: '#707070'
     },

@@ -32,9 +32,3 @@ export default function App() {
     </ProfileContext.Provider>
    )
 }
-
-{/* <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <Router />
-      </PersistGate>
-    </Provider> */}

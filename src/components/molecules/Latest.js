@@ -2,152 +2,151 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 // import AOS from 'aos';
+import Button from '../atoms/Button';
 
-import Default from '../../assets/img/foodone.webp';
+import vector from '../../assets/icons/vector.svg';
+import Default from '../../assets/img/nasikuning.jpg';
 
 const Section = styled.section`
-  margin-top: 80px;
-
-  @media screen and (max-width: 576px) {
-    margin-top: -80px;
-  }
+height: 100vh;
 `;
 
 const TitleSection = styled.h2`
-  border-left: 12px solid var(--secondary-color);
-  margin: 0 0 0 50px;
-  padding: 15px;
-  display: flex;
-  font-family: 'Airbnb Cereal App Medium';
-  color: var(--color-3);
+border-left: 12px solid var(--secondary-color);
+margin: 0 0 0 50px;
+padding: 15px;
+display: flex;
+font-family: 'Airbnb Cereal App Medium';
+color: var(--color-3);
 
-  @media screen and (max-width: 576px) {
-    margin-left: 10px;
-  }
-`;
-
-const Image = styled.img`
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  margin: 40px 0 0 50px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 15px;
-
-  @media screen and (max-width: 576px) {
-    margin: 30px 0 0 40px;
-    width: 300px;
-    height: 300px;
-  }
+@media screen and (max-width: 576px) {
+  margin-left: 10px;
+}
 `;
 
 const Box = styled.div`
-  position: absolute;
-  margin-top: -10px;
-  width: 500px;
-  height: 500px;
-  background-color: var(--secondary-color);
+position: absolute;
+width: 500px;
+height: 500px;
+border-radius: 15px;
+border: 3px solid var(--secondary-color);
+right: 80px;
+bottom: -35px;
+z-index: -2;
 
-  @media screen and (max-width: 576px) {
-    width: 300px;
-    height: 300px;
-  }
-`;
-
-const TitleNew = styled.h1`
-  margin-left: 50px;
-  font-family: 'Airbnb Cereal App Medium';
-  color: var(--color-3);
-  width: 70%;
-
-  object-fit: cover;
-  object-position: center;
-  box-shadow: var(--shadow-black-100);
-  border-radius: 15px;
-  animation: bounceTop_01 3s ease infinite;
-  @media screen and (max-width: 1110px) {
-    width: 350px;
-    height: 350px;
-  }
-  @media screen and (max-width: 991px) {
-    margin-left: 55px;
-  }
-  @media screen and (max-width: 845px) {
-    margin: 0 20px;
-  }
-  @media screen and (max-width: 772px) {
-    margin-top: 70px;
-    width: 300px;
-    height: 300px;
-  }
-`;
-
-const DetailRecipe = styled.p`
-  margin-left: 50px;
-  font-family: 'Airbnb Cereal App Light';
-  color: var(--color-3);
-  width: 65%;
-  font-size: 18px;
-
-  @media screen and (max-width: 1200px) {
-    font-size: 16px;
-    width: 75%;
-  }
-
-  @media screen and (max-width: 940px) {
-    font-size: 14px;
-  }
-
-  @media screen and (max-width: 576px) {
-    text-align: center;
-  }
-`;
-
-const Border = styled.hr`
-  width: 100px;
-  border: 1.5px solid var(--color-5);
-  margin-left: 50px;
-
-  @media screen and (max-width: 576px) {
-    width: 50%;
-    margin-left: 25% !important;
-    margin-right: 25% !important;
-  }
-`;
-
-const Button = styled.button`
-background-color: var(--secondary-color);
-color: var(--color-1);
-padding: 12px 30px;
-border: none;
-border-radius: 7px;
-font-size: 16px;
-text-transform: capitalize;
-transition: all 0.5 ease;
-font-weight: 500;
-text-decoration: none;
-width: 150px;
-text-align: center;
-margin: 10px 0 0 50px;
-
-&:focus {
-  box-shadow: var(--shadow-black-300);
+@media screen and (max-width: 1200px) {
+  width: 450px;
+  height: 450px;
+  right: 10px;
 }
 
-&:hover {
-  cursor: pointer;
-  color: var(--main-color);
-  background-color: #cea905;
+@media screen and (max-width: 940px) {
+  width: 400px;
+  height: 400px;
+  right: -15px;
 }
 
 @media screen and (max-width: 576px) {
-  margin: 0 auto;
-  display: block;
+  width: 300px;
+  height: 300px;
+  right: 40px;
+  bottom: -25px;
 }
 `;
 
-function Slider() {
+const Vector = styled.img`
+position: absolute;
+margin: 30px 0 0 5px;
+width: 320px;
+height: auto;
+z-index: -1;
+
+@media screen and (max-width: 576px) {
+  width: 250px;
+}
+`;
+
+const Image = styled.img`
+width: 500px;
+height: 500px;
+margin-left: 50px;
+object-fit: cover;
+object-position: center;
+border-radius: 15px;
+
+@media screen and (max-width: 1200px) {
+  width: 450px;
+  height: 450px;
+}
+
+@media screen and (max-width: 940px) {
+  width: 400px;
+  height: 400px;
+}
+
+@media screen and (max-width: 576px) {
+  width: 300px;
+  height: 300px;
+  margin-left: 28px;
+}
+`;
+
+const TitleRecipe = styled.h1`
+margin-left: 50px;
+font-family: 'Airbnb Cereal App Medium';
+color: var(--color-3);
+width: 70%;
+
+@media screen and (max-width: 1200px) {
+  font-size: 40px;
+  width: 80%;
+}
+
+@media screen and (max-width: 940px) {
+  font-size: 27px;
+}
+
+@media screen and (max-width: 576px) {
+  font-size: 25px;
+  text-align: center;
+  margin-top: 35px;
+}
+`;
+
+const Border = styled.hr`
+width: 100px;
+border: 1.5px solid var(--color-5);
+margin-left: 50px;
+
+@media screen and (max-width: 576px) {
+  width: 50%;
+  margin-left: 25% !important;
+  margin-right: 25% !important;
+}
+`;
+
+const DetailRecipe = styled.p`
+margin-left: 50px;
+font-family: 'Airbnb Cereal App Light';
+color: var(--color-3);
+width: 65%;
+font-size: 18px;
+
+@media screen and (max-width: 1200px) {
+  font-size: 16px;
+  width: 75%;
+}
+
+@media screen and (max-width: 940px) {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 576px) {
+  text-align: center;
+}
+`;
+
+function Latest() {
   /* const [loading, setLoading] = useState(true);
   const recipe = recipes.data[0];
 
@@ -159,29 +158,29 @@ function Slider() {
   }, [recipe]); */
 
   return (
-    <Section data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+    <Section data-aos="zoom-in-down">
       <TitleSection className="mb-4 mb-md-5">New Recipe</TitleSection>
-        <Container>
+        
         <Row>
         <Col md="6" className="position-relative">
             <Box />
+            <Vector src={vector} alt="Vector" />
             <Image
               src={Default}
-              alt='{recipe.title}'
+              alt='new recipe'
             />
           </Col>
-          <Col md="6" className="d-flex flex-column justify-content-center full">
-            <TitleNew>Healthy Bone Broth Ramen (Quick & Easy)</TitleNew>
+          <Col md="6" className="flex-column justify-content-center">
+            <TitleRecipe>Nasi Kuning</TitleRecipe>
             <Border />
             <DetailRecipe>
               Quick + Easy Chicken Bone Broth Ramen- Healthy chicken ramen in a hurry? That’s right!
             </DetailRecipe>
-            <Button text="learn more" link={`/recipe/`} />
+            <Button text="learn more" link={`/recipe`} />
           </Col>
         </Row>
-      </Container>
     </Section>
   );
 }
 
-export default Slider;
+export default Latest;

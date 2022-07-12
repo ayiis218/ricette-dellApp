@@ -14,13 +14,13 @@ function NavBar() {
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/home">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/create/recipe">Add Recipe</Nav.Link>
             <Nav.Link href="/profile">Profile</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="/login">
-            {UserConsumer?.name}
+            <Nav.Link href="/login">Log in
+            {/* {UserConsumer?.name} */}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

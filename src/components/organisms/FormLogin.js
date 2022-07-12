@@ -14,40 +14,34 @@ import Cb from '../atoms/CheckBox';
 const FormLogin = () => {
   const navigate = useNavigate()
   const [form, setForm] = useState({
-    email: '',
-    password: ''
+    email: ' ',
+    password: ' '
   })
 
-  const onChangeInput = (e, field) => {
+  const onChangeInput = (e) => {
     setForm({
-      ...form,
-      [field]: e.target.value
+      ...form, [e.target.id]: e.target.value
     })
   }
 
   const onSubmit = (e) => {
     e.preventDefault()
-    const body = {
-      email: form.email,
-      password: form.password
-    }
 
-    login(body)
-      .then((response) => {
-        if (response.data.code === 500) {
+    login(form)
+      .then((res) => {
+        if (res.data.code === 500) {
           Alert.fire({
             icon: 'error',
             title: 'Oops....',
-            text: response.data.message
+            text: res.data.message
           })
         } else {
           Alert.fire({
             icon: 'success',
-            title: response.data.message,
+            title: `Login success`,
             showConfirmButton: false,
-            time: 1500
           })
-          navigate('/Home')
+          navigate('/')
         }
       })
       .catch((err) => {
@@ -90,7 +84,7 @@ const FormLogin = () => {
                         id="inputPassword" 
                         label="Password" 
                         placeholder="Password"
-                        onChange = {onChangeInput} 
+                        onChange = {onChangeInput}
                       />
                       <Cb 
                         label="I agree to terms & conditions" 

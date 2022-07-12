@@ -1,19 +1,20 @@
-/* import React from "react";
+import React from "react";
 import { Form } from "react-bootstrap";
 
-/* function Field(props) {
+function Field(props) {
   const {
     placeholder: Placeholder,
-    label: Label } = props;
+    label: Label,
+    type: Type } = props;
 
   return (
     <>
         <Form.Group className="mb-3">
             <Form.Label>{Label}</Form.Label>
-            <Form.Control type="text" placeholder={Placeholder} />
+            <Form.Control type={Type} placeholder={Placeholder} />
         </Form.Group>
     </>
   );
 }
 
-export default Field; */
+export default Field;

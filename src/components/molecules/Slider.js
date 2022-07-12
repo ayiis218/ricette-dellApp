@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 
-import image from '../../assets/img/foto1.png';
+import image from '../../assets/img/riccete.png';
 
 import Search from '../atoms/Search';
 

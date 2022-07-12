@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { Link, useNavigate } from 'react-router-dom';
 import Alert from 'sweetalert2';
@@ -13,22 +13,21 @@ import Cb from '../atoms/CheckBox'
 
 const FormRegister = () => {
   const navigate = useNavigate()
-
-  // const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: ' ',
     email: ' ',
-    phone: ' ',
     password: ' ',
-    newPassword:' ',
-    image: ' '
+    repass: ' ',
+    phone: ' ',
   })
 
-  const [image, setImage] = useState(null)
+  const [image, setImage] = useState({
+    photo: ' '
+  })
 
-  useEffect(() => {
+/*   useEffect(() => {
     document.title = `${process.env.FRONTEND_NAME} - Register Page`;
-  }, [])
+  }, []) */
 
   const onChangeInput = (e) => {
     setForm({
@@ -37,27 +36,27 @@ const FormRegister = () => {
     })
   }
   const onChangeImage = (e) => {
-    setImage({ image: e.target.files[0] })
+    setImage(e.target.files[0])
   }
     const onSubmit = (e) => {
       e.preventDefault()
-      const { name, email, phone, password, newPassword } = form
-      const data = !name || !email || !phone || !password || !newPassword
+      const { name, email, phone, password, repass } = form
+      const data = !name || !email || !phone || !password || !repass
 
       if (data) {
-        Alert('Data must be filled')
-      } else if (form.password !== form.newPassword) {
-        Alert('Password incorrect, please check again!')
+        Alert.fire('Data must be filled')
+      } else if (password !== repass) {
+        Alert.fire('Password incorrect, please check again!')
       } else {
         // setLoading(true)
 
         const formData = new FormData()
-        formData.append('name', form.name)
-        formData.append('email', form.email)
-        formData.append('phone', form.phone)
-        formData.append('password', form.password)
-        formData.append('newPassword', form.newPassword)
-        formData.append('image', image.image)
+        formData.append('name', name)
+        formData.append('email', email)
+        formData.append('phone', phone)
+        formData.append('password', password)
+        formData.append('repass', repass)
+        formData.append('photo', image)
 
         register(formData)
           .then((res) => {
@@ -70,11 +69,10 @@ const FormRegister = () => {
             } else {
               Alert.fire({
                 icon: 'success',
-                title: res.data.message,
+                title: `Register success`,
                 showConfirmButton: false,
-                timer: 1500
               })
-              navigate('auth/login')
+              navigate('/login')
             }
           })
           .catch((err) => {
@@ -130,20 +128,19 @@ const FormRegister = () => {
                         onChange = {onChangeInput}
                       />
                       <Field 
-                        id='newPassword'
+                        id='repass'
                         type='password'
                         label="New Password" 
                         placeholder="New Password" 
                         onChange = {onChangeInput}
                       />
                       <input
-                        id='image'
+                        id='photo'
                         type="file"
                         onChange={onChangeImage}
                         className="form-control"
                       />
                       <Cb 
-
                         label="I agree to terms & conditions" 
                         required
                       />
