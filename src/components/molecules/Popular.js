@@ -179,7 +179,7 @@ function Popular() {
             <DetailRecipe>
               Quick + Easy Chicken Bone Broth Ramen- Healthy chicken ramen in a hurry? That’s right!
             </DetailRecipe>
-            <Button text="learn more" link={`/recipe`} />
+            <Button text="learn more" link={`/detailRecipe`} />
           </Col>
         </Row>
     </Section>

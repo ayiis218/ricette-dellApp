@@ -124,7 +124,7 @@ function ListPopular() {
       ) : (
         recipes.data.map((item) => ( */}
           <div className="justify-content-center" >
-            <Link to={`/recipe`} style={{ textDecoration: 'none' }}>
+            <Link to={`/recipe/detail`} style={{ textDecoration: 'none' }}>
               <Row>
                 <Card lg='3'>
                 <div className="w-100 h-100 p-4 d-flex align-items-end">

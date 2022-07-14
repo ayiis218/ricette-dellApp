@@ -25,7 +25,7 @@ const Btn = styled.button`
 function Button() {
   return (
     <>
-      {me && (
+      {/* { && ( */}
         <Action className="mx-auto">
           <Link to="/profile/edit" style={{ textDecoration: 'none' }}>
             <Btn className="d-block">Edit Profile</Btn>
@@ -34,7 +34,7 @@ function Button() {
             <Btn className="d-block">Change Password</Btn>
           </Link>
         </Action>
-      )}
+      {/* )} */}
     </>
   );
 }
