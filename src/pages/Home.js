@@ -1,22 +1,18 @@
 import React from "react";
-import { Card, Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 import FormLanding from '../components/organisms/FormLanding'
 
 function App() {
   return (
-    <div className="App">
-      <Card>
-        <Card.Body className="pb-2">
-          <Container>
+    <div>
+          <Container fluid>
             <Row>
               <Col lg={12}>
                 <FormLanding />
               </Col>
             </Row>
           </Container>
-        </Card.Body>
-      </Card>
     </div>
   );
 }

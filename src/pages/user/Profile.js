@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
 
-import FormProfile from '../components/organisms/FormProfile'
+import FormProfile from '../../components/organisms/FormProfile'
 
 function App() {
   return (

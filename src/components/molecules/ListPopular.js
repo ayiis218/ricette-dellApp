@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Button, Table } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -48,7 +48,7 @@ const Card = styled.div`
   height: 250px;
   min-height: 300px;
   max-height: 500px;
-  border-radius: 7px;
+  border-radius: 20px;
   transition: ease-in-out 150ms;
 
   &:hover {
@@ -67,16 +67,36 @@ const Title = styled.h2`
   text-transform: capitalize;
   border-radius: 5px;
   padding: 0 5px;
+  color: var(--color-3);
 `;
 
 const Image = styled.img`
   position: absolute;
-  z-index: -2;
-  top: 0;
-  left: 0;
+  width: 240px;
+  height: 230px;
+  z-index: 1;
+  top: 5px;
+  left: 5px;
   object-fit: cover;
   object-position: center;
-`;
+  border-radius: 20px;
+  transition: ease-in-out 150ms;
+  @media screen and (max-width: 1200px) {
+    width: 450px;
+    height: 450px;
+  }
+  
+  @media screen and (max-width: 940px) {
+    width: 400px;
+    height: 400px;
+  }
+  
+  @media screen and (max-width: 576px) {
+    width: 300px;
+    height: 300px;
+    margin-left: 28px;
+  }
+  `;
 
 function ListPopular() {
   /* const [loading, setLoading] = useState(true);
@@ -106,39 +126,39 @@ function ListPopular() {
           <div className="justify-content-center" >
             <Link to={`/recipe`} style={{ textDecoration: 'none' }}>
               <Row>
-                <Card lg='1'>
+                <Card lg='3'>
                 <div className="w-100 h-100 p-4 d-flex align-items-end">
                   <Title>Bakso</Title>
                   <Image
                     src={Bakso}
                     alt='popular recipe'
-                    /* onError={(e) => {
+                    onError={(e) => {
                       e.target.src = Default;
-                    }} */
+                    }}
                   />
                 </div>
               </Card>
-              <Card lg='1'>
+              <Card lg='3'>
                 <div className="w-100 h-100 p-4 d-flex align-items-end">
                   <Title>Pempek</Title>
                   <Image
                     src={Pempek}
                     alt='popular recipe'
-                    /* onError={(e) => {
+                    onError={(e) => {
                       e.target.src = Default;
-                    }} */
+                    }}
                   />
                 </div>
               </Card>
-              <Card lg='1'>
+              <Card lg='3'>
                 <div className="w-100 h-100 p-4 d-flex align-items-end">
                   <Title>Rawon</Title>
                   <Image
                     src={Rawon}
                     alt='popular recipe'
-                    /* onError={(e) => {
+                    onError={(e) => {
                       e.target.src = Default;
-                    }} */
+                    }}
                   />
                 </div>
               </Card>
@@ -148,15 +168,25 @@ function ListPopular() {
                   <Image
                     src={Nasgor}
                     alt='popular recipe'
-                    /* onError={(e) => {
+                    onError={(e) => {
                       e.target.src = Default;
-                    }} */
+                    }}
+                  />
+                </div>
+              </Card>
+              <Card lg='3'>
+                <div className="w-100 h-100 p-4 d-flex align-items-end">
+                  <Title>Rawon</Title>
+                  <Image
+                    src={Rawon}
+                    alt='popular recipe'
+                    onError={(e) => {
+                      e.target.src = Default;
+                    }}
                   />
                 </div>
               </Card>
               </Row>
-              
-              
             </Link>
           </div>
        {/*  ))

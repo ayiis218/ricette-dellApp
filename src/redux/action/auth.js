@@ -3,7 +3,7 @@ import axios from '../../utils/axios';
 export const register = (data) => {
   return new Promise((resolve, reject) => {
     axios
-      .post(`http://localhost:8120/register`, data )
+      .post(`register`, data )
       .then((res) => {
         resolve(res, data);
       })
@@ -13,17 +13,12 @@ export const register = (data) => {
   });
 };
 
-export const login = (email, password) => {
+export const login = (data) => {
   return new Promise((resolve, reject) => {
     axios
-      .post(`http://localhost:8120/login`, {
-        email: email,
-        password: password,
-      })
+      .post(`login`, data )
       .then((res) => {
         resolve(res);
-        localStorage.setItem('token', res.data.token.token);
-        localStorage.setItem('id', res.data.token.id);
       })
       .catch((err) => {
         reject(err);

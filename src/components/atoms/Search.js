@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card } from 'react-bootstrap';
 import styled from 'styled-components';
 
 import icon from '../../assets/icons/Vector.png';
@@ -30,8 +29,6 @@ function TitleBar() {
 
   return (
     <>
-    <Card.Title>Discover Recipe</Card.Title>
-    <Card.Title>& Delicious Food</Card.Title>
       <form onSubmit={(e) => search(e, searchQuery)}>
         <Search className="p-3 pl-4">
           <Icon>

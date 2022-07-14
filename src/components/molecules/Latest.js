@@ -27,12 +27,12 @@ color: var(--color-3);
 const Box = styled.div`
 position: absolute;
 width: 500px;
-height: 500px;
+height: 450px;
 border-radius: 15px;
 border: 3px solid var(--secondary-color);
-right: 80px;
-bottom: -35px;
-z-index: -2;
+right: 20px;
+bottom: -50px;
+z-index: -1 ;
 
 @media screen and (max-width: 1200px) {
   width: 450px;
@@ -68,11 +68,12 @@ z-index: -1;
 
 const Image = styled.img`
 width: 500px;
-height: 500px;
-margin-left: 50px;
+height: 450px;
+margin-left: 90px;
 object-fit: cover;
 object-position: center;
 border-radius: 15px;
+animation: bounceTop_01 3s ease infinite;
 
 @media screen and (max-width: 1200px) {
   width: 450px;
@@ -114,8 +115,8 @@ width: 70%;
 `;
 
 const Border = styled.hr`
-width: 100px;
-border: 1.5px solid var(--color-5);
+width: auto;
+border: solid var(--secondary-color);
 margin-left: 50px;
 
 @media screen and (max-width: 576px) {

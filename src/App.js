@@ -1,15 +1,17 @@
-import React from 'react';
-/* import Router from './router/index';
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react';
+import GlobalStyles from './assets/style/GlobalStyles'
+import { store, persistor } from './redux/store'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Provider } from 'react-redux';
-import { store, persistor } from './redux/store';
-import { PersistGate } from 'redux-persist/integration/react'; */
+import 'bootstrap/dist/js/bootstrap.min.js';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'jquery/dist/jquery.min.js';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { ProfileContext } from "./context";
+// import { ProfileContext } from "./context";
 
 //Pages
-import Profile from './pages/Profile'
+import Profile from './pages/user/Profile'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Home from './pages/Home'
@@ -17,8 +19,10 @@ import NotFound from './pages/NotFound'
 
 export default function App() {
   return (
-    <ProfileContext.Provider value={{ name: "ayiis" }}>
-    <BrowserRouter>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <GlobalStyles />
+        <BrowserRouter>
           <Routes>
             <Route path='/'>
               <Route index element = {<Home />} />
@@ -29,6 +33,7 @@ export default function App() {
             </Route>
           </Routes>
         </BrowserRouter>
-    </ProfileContext.Provider>
+      </PersistGate>
+    </Provider>
    )
 }

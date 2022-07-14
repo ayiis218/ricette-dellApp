@@ -1,12 +1,18 @@
 import { combineReducers } from 'redux';
-import detailReducer from './detail';
-import recipeReducer from './recipe';
-import userReducer from './user';
+import latestRecipeReducer from './latestRecipe';
+import listRecipeReducer from './listRecipe';
+import detailRecipeReducer from './detailRecipe';
+import detailUserReducer from './detailUser';
+import recipeCommentsReducer from './recipeComment';
+import userRecipesReducer from './userRecipe';
 
 const rootReducers = combineReducers({
-  getRecipe: recipeReducer,
-  getDetail: detailReducer,
-  getUser: userReducer
+  latestRecipe: latestRecipeReducer,
+  listRecipe: listRecipeReducer,
+  detailRecipe: detailRecipeReducer,
+  recipeComment: recipeCommentsReducer,
+  detailUser: detailUserReducer,
+  userRecipe: userRecipesReducer
 });
 
 export default rootReducers;

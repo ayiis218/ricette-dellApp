@@ -5,7 +5,7 @@ import Typewriter from 'typewriter-effect';
 const TextTitle = styled.h1`
   font-size: 50px;
   font-family: 'Airbnb Cereal App Medium';
-  color: var(--color-2);
+  color: var(--color-3);
   margin: 0 0 20px;
   width: 65%;
 
@@ -35,12 +35,6 @@ function Title() {
             .typeString('Discover Recipe & Delicious Food')
             .pauseFor(2000)
             .deleteAll()
-            // .typeString('Eat, Cook, Repeat')
-            // .pauseFor(2000)
-            // .deleteAll()
-            // .typeString('Share Your Best Recipes')
-            // .pauseFor(2000)
-            // .deleteAll()
             .start();
         }}
       />
