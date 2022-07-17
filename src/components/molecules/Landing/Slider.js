@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import Title from '../../assets/style/Title'
+import Title from '../../../assets/style/TitleStyles'
 
-import image from '../../assets/img/riccete.png';
-import Search from '../atoms/Search';
+import image from '../../../assets/img/riccete.png';
+import Search from '../../atoms/Search';
 
 const Section = styled.section`
   display: flex;

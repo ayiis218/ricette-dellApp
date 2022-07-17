@@ -53,21 +53,21 @@ function Profile() {
         <NavItem>
           <NavLink
             tag={Link}
-            to= {`/profile`}>
+            to= {`/myrecipe`}>
             My Recipe
           </NavLink>
         </NavItem>
         <NavItem>
           <NavLink
             tag={Link}
-            to={`/profile`}>
+            to={`/saverecipe`}>
             Saved Recipe
           </NavLink>
         </NavItem>
         <NavItem>
           <NavLink
             tag={Link}
-            to={`/profile`}>
+            to={`/likerecipe`}>
             Liked Recipe
           </NavLink>
         </NavItem>

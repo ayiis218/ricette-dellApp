@@ -2,9 +2,9 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
-// import { FooterS, Title, Description, Item, Copyright, List } from '../assets/style/FooterStyles'
+// import { Section, Title, Description, Item, Copyright, List } from '../assets/style/FooterStyles'
 
-const FooterS = styled.footer`
+const Section = styled.footer`
   height: auto;
   background-color: var(--secondary-color);
   color: var(--color-3);
@@ -65,16 +65,14 @@ const Copyright = styled.div`
 
 function Footer() {
   return (
-    <FooterS>
+    <Section>
       <Container>
         <div className="mx-auto">
           <Title>Eat, Cook, Repeat</Title>
           <Description>Share your best Recipe by uploading here !</Description>
         </div>
         <List className="mx-auto">
-          <Item>
-            <Link to= '/product' /> product
-          </Item>
+          <Item>product</Item>
           <Item>Company</Item>
           <Item>Learn More</Item>
           <Item>Get In Touch</Item>
@@ -83,7 +81,7 @@ function Footer() {
           </Copyright>
         </List>
       </Container>
-    </FooterS>
+    </Section>
   );
 }
 

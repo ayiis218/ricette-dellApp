@@ -3,11 +3,11 @@ import { Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import Default from '../../assets/img/foodone.webp';
-import Bakso from '../../assets/img/bakso.jpg';
-import Nasgor from '../../assets/img/nasigoreng.jpg';
-import Rawon from '../../assets/img/rawon.jpg';
-import Pempek from '../../assets/img/pempek.jpg';
+import Default from '../../../assets/img/foodone.webp';
+import Bakso from '../../../assets/img/bakso.jpg';
+import Nasgor from '../../../assets/img/nasigoreng.jpg';
+import Rawon from '../../../assets/img/rawon.jpg';
+import Pempek from '../../../assets/img/pempek.jpg';
 
 const Section = styled.section`
   margin-top: 80px;
@@ -124,7 +124,7 @@ function ListPopular() {
       ) : (
         recipes.data.map((item) => ( */}
           <div className="justify-content-center" >
-            <Link to={`/recipe/detail`} style={{ textDecoration: 'none' }}>
+            <Link to={`/detailRecipe`} style={{ textDecoration: 'none' }}>
               <Row>
                 <Card lg='3'>
                 <div className="w-100 h-100 p-4 d-flex align-items-end">

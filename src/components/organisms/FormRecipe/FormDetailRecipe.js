@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import User from '../../assets/img/user.png';
-import Default from '../../assets/img/default.jpg';
-import saved from '../../assets/icons/bookmark.png';
-import liked from '../../assets/icons/liked.png';
-import play from '../../assets/icons/play.png';
+import User from '../../../assets/icons/user.jpg';
+import Default from '../../../assets/icons/default.jpg';
+import saved from '../../../assets/icons/save.png';
+import liked from '../../../assets/icons/liked.png';
+import play from '../../../assets/icons/play.png';
 // import Default from '../../assets/img/bakso.jpg';
 
 const Section = styled.section`
@@ -30,9 +30,10 @@ const Title = styled.h1`
 `;
 
 const Image = styled.img`
-  min-width: 100%;
+  min-width: 70%;
+  max-width: 200px;
   min-height: 200px;
-  max-height: 500px;
+  max-height: 300px;
   object-fit: cover;
   object-position: center;
   margin: 0 auto;
@@ -42,8 +43,8 @@ const Image = styled.img`
 
 const Icon = styled.div`
   z-index: 2;
-  right: 30px;
-  bottom: 30px;
+  right: 130px;
+  bottom: 5px;
   position: absolute;
   display: flex;
   align-items: center;
@@ -51,15 +52,15 @@ const Icon = styled.div`
   gap: 10px;
 
   @media screen and (max-width: 576px) {
-    right: 15px;
-    bottom: 15px;
+    right: 65px;
+    bottom: 10px;
   }
 `;
 
 const Saved = styled.div`
-  border-radius: 15px !important;
-  padding: 9.9px;
-  width: 47px;
+  border-radius: 7px !important;
+  padding: 5px;
+  width: 30px;
   background-color: var(--secondary-color);
 
   &:hover {
@@ -69,9 +70,9 @@ const Saved = styled.div`
 `;
 
 const Liked = styled.div`
-  border-radius: 15px !important;
-  padding: 6.8px;
-  width: 47px;
+  border-radius: 7px !important;
+  padding: 2px;
+  width: 37px;
   background-color: var(--main-color);
 
   &:hover {
@@ -168,7 +169,7 @@ function Detail() {
             <span title='{dami}'></span>
           </Info>
         </Author>
-        <div className="position-relative mb-5 text-center">
+        <div className="position-relative mb-7 text-center">
           <Image
             src={Default}
             alt='{defaultr}'
@@ -178,10 +179,10 @@ function Detail() {
           />
           <Icon>
             <Saved>
-              {/* <img src={saved} alt="Bookmark" /> */}
+              <img src={saved} alt="Bookmark" />
             </Saved>
             <Liked>
-              {/* <img src={liked} alt="Like" /> */}
+              <img src={liked} alt="Like" />
             </Liked>
           </Icon>
         </div>

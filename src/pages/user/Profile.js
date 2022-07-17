@@ -5,18 +5,14 @@ import FormProfile from '../../components/organisms/FormProfile'
 
 function App() {
   return (
-    <div className="App">
-      <Card>
-        <Card.Body className="pb-2">
-          <Container>
-            <Row>
-              <Col lg={12}>
-                <FormProfile />
-              </Col>
-            </Row>
-          </Container>
-        </Card.Body>
-      </Card>
+    <div>
+      <Container fluid>
+        <Row>
+          <Col lg={12}>
+            <FormProfile />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }

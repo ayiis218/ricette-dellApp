@@ -2,10 +2,10 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 // import AOS from 'aos';
-import Button from '../atoms/Button';
+import Button from '../../atoms/Button';
 
-import vector from '../../assets/icons/vector.svg';
-import Default from '../../assets/img/nasikuning.jpg';
+import vector from '../../../assets/icons/vector.svg';
+import Default from '../../../assets/img/nasikuning.jpg';
 
 const Section = styled.section`
 height: 100vh;
