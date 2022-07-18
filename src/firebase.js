@@ -5,13 +5,13 @@ import "firebase/compat/auth"
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAi0HOP9C9pkz_6vrfwcrhiCTZnaGRJ2EE",
-    authDomain: "ricette-dellapp.firebaseapp.com",
-    projectId: "ricette-dellapp",
-    storageBucket: "ricette-dellapp.appspot.com",
-    messagingSenderId: "457417238580",
-    appId: "1:457417238580:web:20e077684711881abc8261",
-    measurementId: "G-3LF1QNBS2X"
+    apiKey: "AIzaSyBRy04JYAb4kEYRv2dBPjsRCgrAVDWvVnA",
+    authDomain: "ricette-test.firebaseapp.com",
+    projectId: "ricette-test",
+    storageBucket: "ricette-test.appspot.com",
+    messagingSenderId: "907645431962",
+    appId: "1:907645431962:web:c551714a4f9d9e460aef23",
+    measurementId: "G-BNR6K100EV"
   };
 
 const app = initializeApp(firebaseConfig)
