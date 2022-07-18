@@ -1,15 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import { Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import AOS from 'aos';
-import Button from '../atoms/Button';
 
-import vector from '../../assets/icons/vector.svg';
-import Default from '../../assets/img/mieayam.png';
+const Section1 = styled.section`
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 100px 0;
+  background: Old Lace;
+`;
 
-const Section = styled.section`
+const Section2 = styled.section`
 height: 100vh;
 `;
+
+const Image1 = styled.img`
+  width: 520px;
+  height: 380px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: var(--shadow-black-300);
+  border-radius: 15px;
+  animation: bounceTop_01 3s ease infinite;
+  @media screen and (max-width: 1110px) {
+    width: 350px;
+    height: 350px;
+  }
+  @media screen and (max-width: 991px) {
+    margin-left: 55px;
+  }
+  @media screen and (max-width: 845px) {
+    margin: 0 20px;
+  }
+  @media screen and (max-width: 772px) {
+    margin-top: 70px;
+    width: 300px;
+    height: 300px;
+  }
+`;
+
 
 const TitleSection = styled.h2`
 border-left: 12px solid var(--secondary-color);
@@ -66,7 +93,7 @@ z-index: -1;
 }
 `;
 
-const Image = styled.img`
+const Image2 = styled.img`
 width: 500px;
 height: 450px;
 margin-left: 90px;
@@ -146,44 +173,3 @@ font-size: 18px;
   text-align: center;
 }
 `;
-
-function Popular() {
-  /* // const [loading, setLoading] = useState(true);
-  const recipe = recipes.data[0];
-
-  useEffect(() => {
-    AOS.init();
-    if (recipe) {
-      // setLoading(false);
-    }
-  }, [recipe]); */
-
-  return (
-    <Section data-aos="zoom-in-down">
-      <TitleSection className="mb-4 mb-md-5">Popular For You ! </TitleSection>
-        <Row>
-        <Col md="6" className="position-relative">
-            <Box />
-            <Vector src={vector} alt="Vector" />
-            <Image
-              src={Default}
-              alt='Popular recipe'
-              /* onError={(e) => {
-                e.target.src = Default;
-              }} */
-            />
-          </Col>
-          <Col md="6" className="flex-column justify-content-center full">
-            <TitleRecipe>Mie Ayam Bakso</TitleRecipe>
-            <Border />
-            <DetailRecipe>
-              Quick + Easy Chicken Bone Broth Ramen- Healthy chicken ramen in a hurry? That’s right!
-            </DetailRecipe>
-            <Button text="learn more" link={`/detailRecipe`} />
-          </Col>
-        </Row>
-    </Section>
-  );
-}
-
-export default Popular;

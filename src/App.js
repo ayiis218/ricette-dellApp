@@ -12,10 +12,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 //Pages
 import Profile from './pages/user/Profile'
-import Login from './pages/Login'
-import Register from './pages/Register'
+import Login from './pages/Auth/Login'
+import Register from './pages/Auth/Register'
 import Home from './pages/Home'
 import DetailRecipe from './pages/recipe/DetailRecipe'
+import CreateRecipe from './pages/recipe/AddRecipe'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
               <Route path = 'login' element = {<Login />} />
               <Route path = 'profile' element = {<Profile />} />
               <Route path = 'detailRecipe' element = {<DetailRecipe />} />
+              <Route path = 'createRecipe' element = {<CreateRecipe />} />
               <Route path = '*' element = {<NotFound />} />
             </Route>
           </Routes>

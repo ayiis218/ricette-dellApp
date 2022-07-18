@@ -3,13 +3,13 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { Link, useNavigate } from 'react-router-dom';
 import Alert from 'sweetalert2';
 
-import { login } from '../../redux/action/auth';
+import { login } from '../../../redux/action/auth';
 
-import AuthStyles from '../../assets/style/AuthStyles';
+import AuthStyles from '../../../assets/style/AuthStyles';
 
-import Picture from '../PictureSlide';
-import Field from "../atoms/Field";
-import Cb from '../atoms/CheckBox';
+import Picture from '../../PictureSlide';
+import Field from "../../atoms/Field";
+import Cb from '../../atoms/CheckBox';
 
 const FormLogin = () => {
   const navigate = useNavigate()

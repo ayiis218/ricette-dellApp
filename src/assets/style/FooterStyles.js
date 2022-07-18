@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const FooterS = styled.footer`
+const Section = styled.footer`
   height: auto;
   background-color: #EFC81A
   padding-top: 200px;

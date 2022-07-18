@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-// import '@fontsource/inter';
+import '@fontsource/inter';
 
 const Auth = createGlobalStyle`
   @font-face {
@@ -113,25 +113,5 @@ const Auth = createGlobalStyle`
     }
   }
 `;
-
-/* const RightBar = styled`
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  height: 740px;
-  width: 350px;
-  background-color: var(--secondary-color);
-  z-index: -1;
-  @media screen and (max-width: 991px) {
-    width: 250px;
-  }
-  @media screen and (max-width: 767px) {
-    width: 150px;
-  }
-  @media screen and (max-width: 450px) {
-    width: 50px;
-  }
-`; */
 
 export default Auth;

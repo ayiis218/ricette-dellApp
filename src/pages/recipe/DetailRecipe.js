@@ -1,43 +1,20 @@
-import React, { useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { Container } from 'reactstrap';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { getDetailRecipe } from '../../store/actions/recipe';
-// import { getRecipeComments } from '../../store/actions/comment';
-import Navbar from '../../components/atoms/NavBar';
-// import Detail from '../../components/Detail/Detail';
-// import Comment from '../../components/Detail/Comment';
-import Footer from '../../components/Footer';
-import Detail from '../../components/organisms/FormDetailRecipe'
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 
-const DetailRecipe = () => {
-/*   const { id } = useParams();
+import FormDetailRecipe from '../../components/organisms/FormRecipe/FormDetailRecipe'
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const { detailRecipe } = useSelector((state) => state);
-  const { recipeComments } = useSelector((state) => state);
-
-  useEffect(() => {
-    document.title = `${process.env.REACT_APP_APP_NAME} - Detail Recipe Page`;
-
-    dispatch(getDetailRecipe(id, navigate));
-    dispatch(getRecipeComments(id, navigate));
-  }, []); */
-
+function App() {
   return (
-    <>
-      <Navbar />
-
+    <div>
       <Container fluid>
-        {/* <Detail recipe={detailRecipe.data} />
-        <Comment comments={recipeComments} /> */}
-        <Detail />
+        <Row>
+          <Col lg={12}>
+            <FormDetailRecipe />
+          </Col>
+        </Row>
       </Container>
-
-      <Footer />
-    </>
+    </div>
   );
-};
+}
 
-export default DetailRecipe;
+export default App;

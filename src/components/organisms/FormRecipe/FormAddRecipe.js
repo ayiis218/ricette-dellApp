@@ -1,13 +1,10 @@
-import React from "react";
+/* import React from "react";
 import styled from 'styled-components';
 
-import NavBar from '../atoms/Navbar/index'
+import NavBar from '../../atoms/Navbar/index'
 // import NavBar from '../atoms/NavBar'
-import Slider from '../molecules/Landing/Slider'
-import Popular from '../molecules/Landing/Popular'
-import Latest from "../molecules/Landing/Latest"
-import ListPopular from '../molecules/Landing/ListPopular'
-import Footer from '../Footer'
+import AddRecipe from '../../molecules/Recipe/AddRecipe'
+import Footer from '../../Footer'
 
 const RightBar = styled.div`
   position: absolute;
@@ -32,18 +29,14 @@ const RightBar = styled.div`
   }
 `;
 
-function FormLanding() {
+function FormAddRecipe() {
   return (
     <>
       <NavBar />
-      <RightBar />
-      <Slider />
-      <Popular />
-      <Latest  />
-      <ListPopular />
+      {/* <AddRecipe />}
       <Footer />
     </>
   );
 }
 
-export default FormLanding;
+export default FormAddRecipe; */
