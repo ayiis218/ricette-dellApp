@@ -1,118 +1,151 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import React, { useState } from 'react';
+import { Row, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import Alert from 'sweetalert2';
 
 import { login } from '../../../redux/action/auth';
 
-import AuthStyles from '../../../assets/style/AuthStyles';
-
+import AuthStyles from '../../style/AuthStyles';
 import Picture from '../../PictureSlide';
-import Field from "../../atoms/Field";
-import Cb from '../../atoms/CheckBox';
 
-const FormLogin = () => {
-  const navigate = useNavigate()
-  const [form, setForm] = useState({
-    email: ' ',
-    password: ' '
-  })
+const FormLogin = (props) => {
+   const navigate = useNavigate();
+   const [loading, setLoading] = useState(false);
+   const [email, setEmail] = useState('');
+   const [password, setPassword] = useState('');
 
-  const onChangeInput = (e) => {
-    setForm({
-      ...form, [e.target.id]: e.target.value
-    })
-  }
+   const handleLogin = (e) => {
+      e.preventDefault();
 
-  const onSubmit = (e) => {
-    e.preventDefault()
-
-    login(form)
-      .then((res) => {
-        if (res.data.code === 500) {
-          Alert.fire({
+      if (!email || !password) {
+         Alert.fire({
+            title: 'Error!',
+            text: 'All field must be filled!',
             icon: 'error',
-            title: 'Oops....',
-            text: res.data.message
-          })
-        } else {
-          Alert.fire({
-            icon: 'success',
-            title: `Login success`,
-            showConfirmButton: false,
-          })
-          navigate('/')
-        }
-      })
-      .catch((err) => {
-        Alert.fire({
-          icon: 'error',
-          title: 'incorrect....',
-          text: err.message
-        })
-      })
-  }
+         });
+      } else {
+         setLoading(true);
+         login({ email, password })
+            .then((res) => {
+               localStorage.setItem('token', res?.data?.token);
+               if (res.data.code === 500) {
+                  Alert.fire({
+                     title: 'Failed!',
+                     text: res.message,
+                     icon: 'error',
+                  });
+               } else {
+                  Alert.fire({
+                     title: 'Success!',
+                     text: 'Login Success',
+                     icon: 'success',
+                  });
+                  navigate('/');
+               }
+            })
+            .catch((err) => {
+               Alert.fire({
+                  title: 'Error',
+                  text: `Cek Password ${err.message}`,
+                  icon: 'error',
+               });
+            })
+            .finally(() => {
+               setLoading(false);
+            });
+      }
+   };
 
-  return (
-    <>
-        <AuthStyles />
-          <Container>
-            <Row>
-              <Picture />
-              <Col lg="6" className="custom d-flex justify-content-center align-items-center">
-                <div className="col-10 d-flex flex-column justify-content-center align-items-center p-0">
+   return (
+      <>
+         <AuthStyles />
+         <Row>
+            <Picture />
+            <Col
+               lg="6"
+               className="custom d-flex justify-content-center align-items-center"
+            >
+               <div className="col-10 d-flex flex-column justify-content-center align-items-center p-0">
                   <h2 className="main-color title">Welcome</h2>
-                  <span className="secondary-color description mt-4 mb-4">Log in into your exiting account</span>
-                  <hr className="separator w-100 mb-0 mt-1" />
-                    <Form
-                      className="w-100 mb-3 mt-3"
-                      method="post"
-                      encType="multipart/form-data"
-                      action="/profile"
-                      onSubmit= {onSubmit}
-                    >
-
-                      <Field 
-                        type="email" 
-                        id="inputEmail" 
-                        label="E-mail" 
-                        placeholder="examplexxx@gmail.com" 
-                        onChange = {onChangeInput}
-                      />
-                      <Field 
-                        type="password" 
-                        id="inputPassword" 
-                        label="Password" 
-                        placeholder="Password"
-                        onChange = {onChangeInput}
-                      />
-                      <Cb 
-                        label="I agree to terms & conditions" 
-                        required
-                      />
-                      <Button 
-                        variant="warning" 
-                        className="w-100 btn-main pt-3 pb-3"
-                        onClick={onSubmit}
-                      >Log in</Button>
-
-                    </Form>
-                    <div className="w-100 d-flex flex-column">
-                      <div className="w-100 d-flex justify-content-center align-items-center">
+                  <span className="secondary-color description mt-0 mb-0">
+                     Log in into your exiting account
+                  </span>
+                  <hr className="separator" />
+                  <Form className="w-100 mb-1 mt-5" onSubmit={handleLogin}>
+                     <FormGroup className="mb-3">
+                        <Label for="email" className="mb-2 label">
+                           E-mail
+                        </Label>
+                        <Input
+                           type="email"
+                           placeholder="examplexxx@gmail.com"
+                           id="email"
+                           className="form-control pt-3 pb-3 pl-3 pr-0 input-auth"
+                           onChange={(e) => setEmail(e.target.value)}
+                           required
+                        />
+                     </FormGroup>
+                     <FormGroup className="mb-1">
+                        <Label for="password" className="mb-2 label">
+                           Password
+                        </Label>
+                        <Input
+                           type="password"
+                           placeholder="Password"
+                           id="password"
+                           className="form-control pt-3 pb-3 pl-3 pr-0 input-auth"
+                           onChange={(e) => setPassword(e.target.value)}
+                           required
+                        />
+                     </FormGroup>
+                     <FormGroup className="mb-4 terms">
+                        <Input
+                           type="checkbox"
+                           className="checkbox"
+                           id="terms"
+                           required
+                        />
+                        <Label htmlFor="terms" className="label">
+                           I agree to terms & conditions
+                        </Label>
+                     </FormGroup>
+                     {loading ? (
+                        <Button className="w-100 btn-main pt-3 pb-3" disabled>
+                           {' '}
+                           Loading..
+                           <span
+                              className="spinner-border spinner-border-sm"
+                              role="status"
+                              aria-hidden="true"
+                           />
+                        </Button>
+                     ) : (
+                        <Button
+                           type="submit"
+                           className="w-100 btn-main pt-3 pb-3"
+                        >
+                           Login
+                        </Button>
+                     )}
+                  </Form>
+                  <div className="w-100 d-flex flex-column">
+                     <div className="w-100 d-flex justify-content-center align-items-center">
                         <span className="alternative">
-                          Don&apost have account?
-                          <Link to="/register" className="main-color clicked text-decoration-none">
-                            Sign Up
-                          </Link>
+                           Don&apos;t have account?{' '}
+                           <Link
+                              to="/register"
+                              className="main-color clicked text-decoration-none"
+                           >
+                              Sign Up
+                           </Link>
                         </span>
-                      </div>
-                    </div>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-    </>
-  );
-}
+                     </div>
+                  </div>
+               </div>
+            </Col>
+         </Row>
+      </>
+   );
+};
 
 export default FormLogin;

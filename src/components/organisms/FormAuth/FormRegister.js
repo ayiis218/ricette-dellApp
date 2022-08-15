@@ -1,166 +1,197 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import React, { useState } from 'react';
+import { Row, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import Alert from 'sweetalert2';
 
 import { register } from '../../../redux/action/auth';
-
-import AuthStyles from '../../../assets/style/AuthStyles';
-
+import AuthStyles from '../../style/AuthStyles';
 import Picture from '../../PictureSlide';
-import Field from "../../atoms/Field";
-import Cb from '../../atoms/CheckBox'
 
 const FormRegister = () => {
-  const navigate = useNavigate()
-  const [form, setForm] = useState({
-    name: ' ',
-    email: ' ',
-    password: ' ',
-    repass: ' ',
-    phone: ' ',
-  })
+   const navigate = useNavigate();
+   const [loading, setLoading] = useState(false);
+   const [name, setName] = useState('');
+   const [email, setEmail] = useState('');
+   const [password, setPassword] = useState('');
+   const [phone, setPhone] = useState('');
+   const [repass, setRePass] = useState('');
 
-  const [image, setImage] = useState({
-    photo: ' '
-  })
+   const onSubmit = (e) => {
+      e.preventDefault();
+      const data = name || email || phone || password || repass;
 
-/*   useEffect(() => {
-    document.title = `${process.env.FRONTEND_NAME} - Register Page`;
-  }, []) */
-
-  const onChangeInput = (e) => {
-    setForm({
-      ...form,
-      [e.target.id]: e.target.value
-    })
-  }
-  const onChangeImage = (e) => {
-    setImage(e.target.files[0])
-  }
-    const onSubmit = (e) => {
-      e.preventDefault()
-      const { name, email, phone, password, repass } = form
-      const data = !name || !email || !phone || !password || !repass
-
-      if (data) {
-        Alert.fire('Data must be filled')
+      if (!data) {
+         Alert.fire({
+            title: 'Error!',
+            text: 'All field must be filled!',
+            icon: 'error',
+         });
       } else if (password !== repass) {
-        Alert.fire('Password incorrect, please check again!')
+         Alert.fire({
+            title: 'Error!',
+            text: 'Password incorrect, please check again!',
+            icon: 'error',
+         });
       } else {
-        // setLoading(true)
-
-        const formData = new FormData()
-        formData.append('name', name)
-        formData.append('email', email)
-        formData.append('phone', phone)
-        formData.append('password', password)
-        formData.append('repass', repass)
-        formData.append('photo', image)
-
-        register(formData)
-          .then((res) => {
-            if (res.data.code === 500 ) {
-              Alert.fire({
-                icon: 'error',
-                title: 'Oops..',
-                text: res.data.message
-              })
-            } else {
-              Alert.fire({
-                icon: 'success',
-                title: `Register success`,
-                showConfirmButton: false,
-              })
-              navigate('/login')
-            }
-          })
-          .catch((err) => {
-            Alert.fire({
-              icon: 'error',
-              title: 'incorrect..',
-              text: err.message
+         setLoading(true);
+         register({ name, email, password, phone, repass })
+            .then((res) => {
+               if (res.data.code === 500) {
+                  Alert.fire({
+                     icon: 'error',
+                     title: 'Oops..',
+                     text: res.message,
+                  });
+               } else {
+                  Alert.fire({
+                     icon: 'success',
+                     title: `Register success`,
+                     showConfirmButton: false,
+                  });
+                  navigate('/login');
+               }
             })
-          })
+            .catch((err) => {
+               Alert.fire({
+                  title: 'Error',
+                  text: `Incorrect Password ${err.message}`,
+                  icon: 'error',
+               });
+            })
+            .finally(() => {
+               setLoading(false);
+            });
       }
-    }
-  return (
-    <>
-      <AuthStyles />
-        <Container>
-          <Row>
+   };
+   return (
+      <>
+         <AuthStyles />
+         <Row>
             <Picture />
-            <Col lg="6" className="custom d-flex justify-content-center align-items-center">
-              <div className="col-10 d-flex flex-column justify-content-center align-items-center p-0">
-                <h2 className="main-color title">Let&apos;s Get Started !</h2>
-                <span className="secondary-color description mt-4 mb-4"> Create new account to access all features</span>
-                <hr className="separator" />
-                  <Form
-                    className="w-100 mb-3 mt-3"
-                    method="post"
-                    encType="multipart/form-data"
-                    onSubmit= {onSubmit}
-                  >
-
-                    <Field 
-                      id='name'
-                      label="Name" 
-                      placeholder="Name"
-                      onChange = {onChangeInput}
-                    />
-                    <Field 
-                      id='email'
-                      label="Email Address*" 
-                      placeholder="Enter Email Address"
-                      onChange = {onChangeInput}
-                    />
-                    <Field 
-                      id='phone'
-                      label="Phone Number" 
-                      placeholder="08xxxxxx"
-                      onChange = {onChangeInput}
-                    />
-                    <Field 
-                      id='password'
-                      type='password'
-                      label="Create New Password" 
-                      placeholder="Create New Password"
-                      onChange = {onChangeInput}
-                    />
-                    <Field 
-                      id='repass'
-                      type='password'
-                      label="New Password" 
-                      placeholder="New Password" 
-                      onChange = {onChangeInput}
-                    />
-                    <Cb 
-                      label="I agree to terms & conditions" 
-                      required
-                    />
-                    <Button 
-                      variant="warning" 
-                      className="w-100 btn-main pt-3 pb-3"
-                      onClick={onSubmit}
-                    >Register Account</Button>
-
+            <Col
+               lg="6"
+               className="custom d-flex justify-content-center align-items-center"
+            >
+               <div className="col-10 d-flex flex-column justify-content-center align-items-center p-0">
+                  <h2 className="main-color title">Let&apos;s Get Started !</h2>
+                  <span className="secondary-color description mt-0 mb-0">
+                     {' '}
+                     Create new account to access all features
+                  </span>
+                  <hr className="separator" />
+                  <Form className="w-100 mb-1 mt-0" onSubmit={onSubmit}>
+                     <FormGroup className="mb-2 label">
+                        <Label for="name" className="mb-1">
+                           Name
+                        </Label>
+                        <Input
+                           type="text"
+                           placeholder="Name"
+                           id="name"
+                           className="form-control pt-3 pb-3 pl-3 pr-0 input-auth"
+                           onChange={(e) => setName(e.target.value)}
+                           required
+                        />
+                     </FormGroup>
+                     <FormGroup className="mb-3 label">
+                        <Label for="email" className="mb-2">
+                           Email Address*
+                        </Label>
+                        <Input
+                           type="email"
+                           placeholder="Enter email address"
+                           id="email"
+                           className="form-control pt-3 pb-3 pl-3 pr-0 input-auth"
+                           onChange={(e) => setEmail(e.target.value)}
+                           required
+                        />
+                     </FormGroup>
+                     <FormGroup className="mb-3 label">
+                        <Label for="phone" className="mb-2">
+                           Phone Number
+                        </Label>
+                        <Input
+                           type="text"
+                           placeholder="08xxxxxxxxxx"
+                           id="phone"
+                           className="form-control pt-3 pb-3 pl-3 pr-0 input-auth"
+                           onChange={(e) => setPhone(e.target.value)}
+                           required
+                        />
+                     </FormGroup>
+                     <FormGroup className="mb-3 label">
+                        <Label htmlFor="password" className="mb-2">
+                           Create New Password
+                        </Label>
+                        <Input
+                           type="password"
+                           placeholder="Create New Password"
+                           id="password"
+                           className="form-control pt-3 pb-3 pl-3 pr-0 input-auth"
+                           onChange={(e) => setPassword(e.target.value)}
+                           required
+                        />
+                     </FormGroup>
+                     <FormGroup className="mb-3 label">
+                        <Label htmlFor="passwordConfirmation" className="mb-2">
+                           New Password
+                        </Label>
+                        <Input
+                           type="password"
+                           placeholder="New Password"
+                           id="passwordConfirmation"
+                           className="form-control pt-3 pb-3 pl-3 pr-0 input-auth"
+                           onChange={(e) => setRePass(e.target.value)}
+                           required
+                        />
+                     </FormGroup>
+                     <FormGroup className="mb-4 terms">
+                        <Input
+                           type="checkbox"
+                           className="checkbox"
+                           id="checkbox"
+                           required
+                        />
+                        <Label for="checkbox" className="label">
+                           I agree to terms & conditions
+                        </Label>
+                     </FormGroup>
+                     {loading ? (
+                        <Button className="w-100 btn-main pt-3 pb-3" disabled>
+                           Loading..
+                           <span
+                              className="spinner-border spinner-border-sm"
+                              role="status"
+                              aria-hidden="true"
+                           />
+                        </Button>
+                     ) : (
+                        <Button
+                           type="submit"
+                           className="w-100 btn-main pt-3 pb-3"
+                        >
+                           Register Account
+                        </Button>
+                     )}
                   </Form>
-                  <div className="w-100 d-flex flex-column">
-                    <div className="w-100 d-flex justify-content-center align-items-center">
-                      <span className="alternative">
-                        Already have account?{' '}
-                        <Link to="/login" className="main-color clicked text-decoration-none">
-                          Log In Here
-                        </Link>
-                      </span>
-                    </div>
+                  <div className="w-100 mb-1 d-flex flex-column">
+                     <div className="w-100 d-flex justify-content-center align-items-center">
+                        <span className="alternative">
+                           Already have account?{' '}
+                           <Link
+                              to="/login"
+                              className="main-color clicked text-decoration-none"
+                           >
+                              Log in Here
+                           </Link>
+                        </span>
+                     </div>
                   </div>
-              </div>
+               </div>
             </Col>
-          </Row>
-        </Container>
-    </>
-  );
-}
+         </Row>
+      </>
+   );
+};
 
 export default FormRegister;

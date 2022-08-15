@@ -8,11 +8,12 @@ const Auth = createGlobalStyle`
   }
   .full,
   .custom {
-    min-height: 150vh;
+    min-height: 120vh;
   }
   .title {
     font-family: "Inter", sans-serif;
     font-weight: 700;
+    margin-top: 30px;
   }
   .description {
     font-family: "Inter", sans-serif;
@@ -39,7 +40,7 @@ const Auth = createGlobalStyle`
     font-weight: 500;
     font-size: 14px;
   }
-  .banner {
+  .Picture {
     object-fit: cover;
     object-position: center;
     transform: rotate(-180deg);

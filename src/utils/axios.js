@@ -1,37 +1,36 @@
 import axios from 'axios';
 
-const axiosApi = axios.create({
-  baseURL: `${process.env.BACKEND_URL}`
+const axiosInterceptors = axios.create({
+   baseURL: `${process.env.REACT_APP_API_URL}`,
 });
 
-axiosApi.interceptors.request.use(
-  function (config) {
-    config.headers = {
-      Authorization: `Bearer ${localStorage.getItem('token')}`
-    };
-    return config;
-  },
-  function (error) {
-    return Promise.reject(error);
-  }
+axiosInterceptors.interceptors.request.use(
+   function (config) {
+      config.headers = {
+         Authorization: `Bearer ${localStorage.getItem('token')}`,
+      };
+      return config;
+   },
+   function (error) {
+      return Promise.reject(error);
+   }
 );
 
-axiosApi.interceptors.response.use(
-  function (res) {
-    return res;
-  },
-  function (error) {
-    if (error.response.status === 403) {
-     
-      if (error.response.data.message === 'jwt expired') {
-        localStorage.clear();
-        window.location.href = '/login';
+axiosInterceptors.interceptors.response.use(
+   function (res) {
+      return res;
+   },
+   function (error) {
+      if (error.response.status === 403) {
+         if (error.response.data.message === 'jwt expired') {
+            localStorage.clear();
+            window.location.href = '/auth/login';
+         }
+         localStorage.clear();
+         window.location.href = '/auth/login';
       }
-      localStorage.clear();
-      window.location.href = '/login';
-    }
-    return Promise.reject(error);
-  }
-)
+      return Promise.reject(error);
+   }
+);
 
-export default axiosApi;
+export default axiosInterceptors;

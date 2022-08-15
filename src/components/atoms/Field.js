@@ -1,20 +1,27 @@
-import React from "react";
-import { Form } from "react-bootstrap";
+/* eslint-disable no-useless-rename */
+import React from 'react';
+import { Form } from 'react-bootstrap';
 
 function Field(props) {
-  const {
-    placeholder: Placeholder,
-    label: Label,
-    type: Type } = props;
+   const {
+      placeholder: placeholder,
+      label: label,
+      type: type,
+      onchange: onChange,
+   } = props;
 
-  return (
-    <>
-        <Form.Group className="mb-3">
-            <Form.Label>{Label}</Form.Label>
-            <Form.Control type={Type} placeholder={Placeholder} />
-        </Form.Group>
-    </>
-  );
+   return (
+      <>
+         <Form.Group className="mb-3">
+            <Form.Label>{label}</Form.Label>
+            <Form.Control
+               type={type}
+               placeholder={placeholder}
+               onChange={onChange}
+            />
+         </Form.Group>
+      </>
+   );
 }
 
 export default Field;
