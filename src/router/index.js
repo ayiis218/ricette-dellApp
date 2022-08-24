@@ -48,10 +48,10 @@ const router = () => {
                <Route path="password" element={<UpdateProfile />} />
             </Route>
             <Route path="/recipe/" element={<PrivateRoute />}>
-               <Route index element={<NotFound />} />
+               <Route index element={<List />} />
                <Route path="Add" element={<CreateRecipe />} />
                <Route path=":id" element={<DetailRecipe />} />
-               <Route path="update/:id" element={<NotFound />} />
+               <Route path="update/:id" element={<UpdateRecipe />} />
             </Route>
             <Route path="*" element={<NotFound />} />
          </Routes>
