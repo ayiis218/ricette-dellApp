@@ -1,20 +1,17 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React from 'react';
 
-import FormAddRecipe from '../../components/organisms/FormRecipe/FormAddRecipe'
+import NavBar from '../../components/atoms/Navbar';
+import FormAddRecipe from '../../components/organisms/FormRecipe/FormAddRecipe';
+import Footer from '../../components/Footer';
 
 function App() {
-  return (
-    <div>
-      <Container fluid>
-        <Row>
-          <Col lg={12}>
-            <FormAddRecipe />
-          </Col>
-        </Row>
-      </Container>
-    </div>
-  );
+   return (
+      <>
+         <NavBar />
+         <FormAddRecipe />
+         <Footer />
+      </>
+   );
 }
 
 export default App;
