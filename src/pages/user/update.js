@@ -1,5 +1,5 @@
 import React from 'react';
-import FormUpdate from '../../components/organisms/FormRecipe/FormUpdate';
+import FormUpdate from '../../components/organisms/FormUpdate';
 
 function App() {
    return <FormUpdate />;

@@ -22,10 +22,10 @@ export const Title = styled.h1`
 `;
 
 export const Image = styled.img`
-   min-width: 70%;
-   max-width: 200px;
+   min-width: 100%;
+   max-width: 300px;
    min-height: 200px;
-   max-height: 300px;
+   max-height: 500px;
    object-fit: cover;
    object-position: center;
    margin: 0 auto;
@@ -35,8 +35,8 @@ export const Image = styled.img`
 
 export const Icon = styled.div`
    z-index: 2;
-   right: 130px;
-   bottom: 5px;
+   right: 20px;
+   bottom: 20px;
    position: absolute;
    display: flex;
    align-items: center;
@@ -52,7 +52,7 @@ export const Icon = styled.div`
 export const Saved = styled.div`
    border-radius: 7px !important;
    padding: 5px;
-   width: 30px;
+   width: 35px;
    background-color: var(--secondary-color);
 
    &:hover {

@@ -38,7 +38,7 @@ function ListPopular({ recipes }) {
                               <div className="w-100 h-100 d-flex align-items-end">
                                  <TitleRecipe>{item.name_recipe}</TitleRecipe>
                                  <Image
-                                    src={`https://ricette-dellapp.herokuapp.com/${item.images}`}
+                                    src={`${process.env.REACT_APP_API_URL}${item.images}`}
                                     alt="popular recipe"
                                     onError={(e) => {
                                        e.target.src = Default;

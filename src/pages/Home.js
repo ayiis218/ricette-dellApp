@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { useSelector, useDispatch } from 'react-redux';
 import ContentLoader from 'react-content-loader';
+import { useSelector, useDispatch } from 'react-redux';
 import { getLatestRecipe } from '../redux/action/recipe';
 
 import NavBar from '../components/atoms/Navbar';

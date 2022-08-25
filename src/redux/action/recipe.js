@@ -70,14 +70,14 @@ export const getListRecipe = (url, navigate) => async (dispatch) => {
    }
 };
 
-export const getDetailRecipe = (id, navigate) => async (dispatch) => {
+export const getDetailRecipe = (id_recipe, navigate) => async (dispatch) => {
    try {
       dispatch({
          type: GET_DETAIL_RECIPE_PENDING,
          payload: null,
       });
 
-      const res = await axios.get(`recipe/${id}`);
+      const res = await axios.get(`recipe/${id_recipe}`);
 
       dispatch({
          type: GET_DETAIL_RECIPE_SUCCESS,
@@ -100,14 +100,14 @@ export const getDetailRecipe = (id, navigate) => async (dispatch) => {
    }
 };
 
-export const getUserRecipes = (id_recipe, navigate) => async (dispatch) => {
+export const getUserRecipes = (id_users, navigate) => async (dispatch) => {
    try {
       dispatch({
          type: GET_USER_RECIPES_PENDING,
          payload: null,
       });
 
-      const res = await axios.get(`myrecipe/${id_recipe}`);
+      const res = await axios.get(`myrecipe/${id_users}`);
 
       dispatch({
          type: GET_USER_RECIPES_SUCCESS,

@@ -55,16 +55,3 @@ export const updateProfile = (data, id_users) => {
       });
   });
 }; */
-
-/* export const updatePassword = (data, id_users) => {
-  return new Promise((resolve, reject) => {
-    axios
-      .put(`users/password/${id}`, data)
-      .then((res) => {
-        resolve(res.data);
-      })
-      .catch((err) => {
-        reject(err);
-      });
-  });
-}; */

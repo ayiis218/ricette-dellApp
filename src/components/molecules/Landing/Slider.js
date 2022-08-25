@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import Title from '../../style/TitleStyles';
+import Title from '../../Title';
 import image from '../../../assets/img/riccete.png';
 import Search from '../../atoms/Search';
 import { Section, Image } from './style/sliderStyle';

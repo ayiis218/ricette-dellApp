@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import AOS from 'aos';
+
 import User from '../../../assets/icons/user.jpg';
 import Default from '../../../assets/img/original.jpg';
 import saved from '../../../assets/icons/save.png';
@@ -61,7 +62,7 @@ function Detail({ recipes }) {
                            </Link>
                         </h6>
                         <span title={recipe.date}>
-                           {moment(recipe.date).fromNow()}
+                           {moment(recipe.date).startOf('hour').fromNow()}
                         </span>
                      </Info>
                   </Author>

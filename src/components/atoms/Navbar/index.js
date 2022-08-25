@@ -10,8 +10,6 @@ function Navigation() {
    const isLogin = Boolean(localStorage.getItem('token'));
    const [isOpen, setIsOpen] = useState(false);
 
-   console.log(isLogin);
-
    return (
       <>
          <Navbar expand="lg" className="fixed-top">

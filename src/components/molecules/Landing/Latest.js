@@ -37,7 +37,7 @@ function Latest({ recipes }) {
                   <Box />
                   <Vector src={vector} alt="Vector" />
                   <Image
-                     src={`https://ricette-dellapp.herokuapp.com/${recipe.images}`}
+                     src={`${process.env.REACT_APP_API_URL}${recipe.images}`}
                      alt={recipe.name_recipe}
                      onError={(e) => {
                         e.target.src = Default;

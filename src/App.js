@@ -12,13 +12,6 @@ import Route from './router';
 /* import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // import { ProfileContext } from "./context";
 
-//Pages
-import Profile from './pages/user/Profile'
-import Login from './pages/Auth/Login'
-import Register from './pages/Auth/Register'
-import Home from './pages/Home'
-import DetailRecipe from './pages/recipe/DetailRecipe'
-import CreateRecipe from './pages/recipe/AddRecipe'
 import NotFound from './pages/NotFound' */
 
 export default function App() {

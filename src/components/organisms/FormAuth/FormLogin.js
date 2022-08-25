@@ -28,10 +28,10 @@ const FormLogin = (props) => {
          login({ email, password })
             .then((res) => {
                localStorage.setItem('token', res?.data?.token);
-               if (res.data.code === 500) {
+               if (res.data.token === undefined) {
                   Alert.fire({
                      title: 'Failed!',
-                     text: res.message,
+                     text: 'incorrect Email',
                      icon: 'error',
                   });
                } else {
@@ -46,7 +46,7 @@ const FormLogin = (props) => {
             .catch((err) => {
                Alert.fire({
                   title: 'Error',
-                  text: `Cek Password ${err.message}`,
+                  text: `incorrect Password`,
                   icon: 'error',
                });
             })

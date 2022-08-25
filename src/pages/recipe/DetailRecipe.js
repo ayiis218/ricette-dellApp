@@ -10,7 +10,7 @@ import NavBar from '../../components/atoms/Navbar';
 import FormDetailRecipe from '../../components/organisms/FormRecipe/FormDetailRecipe';
 import Footer from '../../components/Footer';
 
-const Home = () => {
+const App = () => {
    const { id } = useParams();
    const dispatch = useDispatch();
    const navigate = useNavigate();
@@ -37,4 +37,4 @@ const Home = () => {
    );
 };
 
-export default Home;
+export default App;
