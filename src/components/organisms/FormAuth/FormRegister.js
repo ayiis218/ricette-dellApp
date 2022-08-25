@@ -46,7 +46,6 @@ const FormRegister = () => {
                   Alert.fire({
                      icon: 'success',
                      title: `Register success`,
-                     showConfirmButton: false,
                   });
                   navigate('/login');
                }
@@ -54,7 +53,7 @@ const FormRegister = () => {
             .catch((err) => {
                Alert.fire({
                   title: 'Error',
-                  text: `Incorrect Password ${err.message}`,
+                  text: 'Duplicate Email',
                   icon: 'error',
                });
             })
