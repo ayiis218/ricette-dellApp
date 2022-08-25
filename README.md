@@ -2,18 +2,15 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Create a Node.js app for building ricette dellApp using React.
+Create application using React JS.
 
 ### Built With
 This app was built with some technologies below:
-- [Node.js](https://nodejs.org/en/)
 - [React.js](https://reactjs.com/)
-- [Boostrap](https://getbootstrap.com/)
+- [React-Bootstrap](https://react-bootstrap.github.io/)
+- [reactstrap](https://reactstrap.github.io/)
+- [Styled-Components](https://styled-components.com/)
 - [Redux](https://redux.js.org/)
-
-### Requirements
-* [Node.js](https://nodejs.org/en/)
-* [Database](./blanja.sql)
 
 ### Installation
 - Clone my repositories
