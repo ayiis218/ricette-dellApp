@@ -8,6 +8,7 @@ const initialState = {
    isLoading: false,
    isError: false,
    data: [],
+   pagination: [],
    error: null,
 };
 
@@ -21,6 +22,7 @@ const listRecipeReducer = (state = initialState, action) => {
             isLoading: false,
             isError: false,
             data: action.payload.data,
+            pagination: action.payload.pagination,
          };
       case GET_LIST_RECIPE_FAILED:
          return {

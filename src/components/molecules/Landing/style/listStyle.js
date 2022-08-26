@@ -44,7 +44,7 @@ export const Card = styled.div`
    transition: ease-in-out 150ms;
 
    &:hover {
-      box-shadow: 0 0 12px -2px;
+      box-shadow: 0 0 12px -2px var(--secondary-color);
       transition: ease-in-out 150ms;
       cursor: pointer;
    }
@@ -74,6 +74,7 @@ export const Image = styled.img`
    object-position: center;
    border-radius: 20px;
    transition: ease-in-out 150ms;
+
    @media screen and (max-width: 1200px) {
       width: 450px;
       height: 450px;
