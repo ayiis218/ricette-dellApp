@@ -40,14 +40,14 @@ export const getLatestRecipe = () => async (dispatch) => {
    }
 };
 
-export const getListRecipe = (url, navigate) => async (dispatch) => {
+export const getListRecipe = (navigate) => async (dispatch) => {
    try {
       dispatch({
          type: GET_LIST_RECIPE_PENDING,
          payload: null,
       });
 
-      const res = await axios.get(url);
+      const res = await axios.get(`/recipe/all`);
 
       dispatch({
          type: GET_LIST_RECIPE_SUCCESS,
