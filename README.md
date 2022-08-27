@@ -1,4 +1,4 @@
-# Ricette-dellApp-frontend Application
+# Ricette-dellApp
 <!-- PROJECT LOGO -->
 
 <div align="center">
