@@ -1,4 +1,19 @@
 # Ricette-dellApp-frontend Application
+<!-- PROJECT LOGO -->
+
+<div align="center">
+
+<img src="https://i.postimg.cc/yx8pCmKW/icon.png" align="center" width="250" height="auto" />
+
+</div>
+
+<div align="center">
+
+<br />
+
+[![license](https://img.shields.io/github/license/dec0dOS/amazing-github-template.svg?style=flat-square)](LICENSE)
+
+</div>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
