@@ -31,7 +31,7 @@ This app was built with some technologies below:
 ### Installation
 - Clone my repositories
 ```
-git clone https://github.com/ayiis218/ricette-dellApp-frontend.git
+git clone https://github.com/ayiis218/ricette-dellApp.git
 ```
 - Install Module
 
