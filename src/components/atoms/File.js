@@ -1,16 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import icon from '../../assets/icons/image.png';
-import {
-   Container,
-   Row,
-   Col,
-   Form,
-   FormGroup,
-   Label,
-   Input,
-   Button,
-} from 'reactstrap';
 
 const Image = styled.div`
    display: flex;

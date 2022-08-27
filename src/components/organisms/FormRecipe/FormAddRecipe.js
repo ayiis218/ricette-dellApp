@@ -63,12 +63,24 @@ const Add = () => {
       hiddenFileInput.current.click();
    };
 
-   const handleChange = (e) => {
-      setImage(e.target.files[0]);
+   const handleChange = (event) => {
+      const fileUploaded = event.target.files[0];
+      document.getElementById('customBtn').innerHTML = fileUploaded.name;
+      setImage(fileUploaded);
    };
 
    const handleSubmit = (e) => {
       e.preventDefault();
+
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('ingredients', ingredients);
+      formData.append('video', video);
+      formData.append('id_user', id_user);
+      if (images) {
+         formData.append('images', images);
+      }
+
       const data = name || ingredients || video || images;
 
       if (!data) {
@@ -79,7 +91,7 @@ const Add = () => {
          });
       } else {
          setLoading(true);
-         createRecipe({ name, ingredients, video, images, id_user })
+         createRecipe(formData)
             .then((res) => {
                alert.fire({
                   icon: 'success',

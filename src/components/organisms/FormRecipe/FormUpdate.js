@@ -51,30 +51,20 @@ const Edit = () => {
    const { id } = useParams();
    const dispatch = useDispatch();
    const { detailRecipe } = useSelector((state) => state);
+   console.log(detailRecipe);
    const hiddenFileInput = useRef(null);
    const [loading, setLoading] = useState(false);
-   const [form, setForm] = useState({
-      name: '',
-      ingredients: '',
-      video: '',
+   const [name, setName] = useState({ name: detailRecipe.data.name_recipe });
+   const [ingredients, setIngredients] = useState({
+      ingredients: detailRecipe.data.ingredients,
    });
-   const [images, setImage] = useState(null);
+   const [video, setVideo] = useState({ video: detailRecipe.data.video });
+   const [images, setImage] = useState({ images: detailRecipe.data.images });
    useEffect(() => {
       document.title = `${process.env.REACT_APP_APP_NAME} - Edit Recipe Page`;
 
       dispatch(getDetailRecipe(id, navigate));
    }, []);
-
-   useEffect(() => {
-      if (detailRecipe.data) {
-         setForm({
-            ...form,
-            name: detailRecipe.data.name,
-            ingredients: detailRecipe.data.ingredients,
-            video: detailRecipe.data.video,
-         });
-      }
-   }, [detailRecipe]);
 
    const handleClick = () => {
       hiddenFileInput.current.click();
@@ -86,50 +76,35 @@ const Edit = () => {
       setImage(fileUploaded);
    };
 
-   const handleInput = (e) => {
-      setForm({
-         ...form,
-         [e.target.id]: e.target.value,
-      });
-   };
    const handleSubmit = (e) => {
       e.preventDefault();
-      setLoading(true);
+
       const formData = new FormData();
-
-      formData.append('name', form.name);
-      formData.append('ingredients', form.ingredients);
-      formData.append('video', form.video);
-
+      formData.append('name', name);
+      formData.append('ingredients', ingredients);
+      formData.append('video', video);
       if (images) {
-         formData.append('image', images);
+         formData.append('images', images);
       }
 
-      if (!form.name || !form.ingredients || !form.video) {
-         alert.fire({
-            title: 'Error!',
-            text: 'All field must be filled!',
-            icon: 'error',
-         });
-      } else {
-         updateRecipe(formData, id)
-            .then((res) => {
-               alert.fire({
-                  icon: 'success',
-                  title: `success`,
-               });
-               navigate('/profile');
-            })
-            .catch((err) => {
-               alert.fire({
-                  icon: 'Error',
-                  title: `Failed ${err}`,
-               });
-            })
-            .finally(() => {
-               setLoading(false);
+      setLoading(true);
+      updateRecipe(formData, id)
+         .then((res) => {
+            alert.fire({
+               icon: 'success',
+               title: `success`,
             });
-      }
+            navigate('/profile');
+         })
+         .catch((err) => {
+            alert.fire({
+               icon: 'Error',
+               title: `Failed ${err}`,
+            });
+         })
+         .finally(() => {
+            setLoading(false);
+         });
    };
 
    return (
@@ -151,19 +126,17 @@ const Edit = () => {
                   <Text
                      name="name"
                      id="name"
-                     value={form.name}
-                     onChange={handleInput}
+                     o
+                     onChange={(e) => setName(e.target.value)}
                   />
                   <Textarea
                      id="ingredients"
-                     value={form.ingredients}
-                     onChange={handleInput}
+                     onChange={(e) => setIngredients(e.target.value)}
                   />
                   <Text
                      name="Video"
                      id="video"
-                     value={form.video}
-                     onChange={handleInput}
+                     onChange={(e) => setVideo(e.target.value)}
                   />
                   <div className="d-flex justify-content-center align-items-center pl-5">
                      {loading ? (
