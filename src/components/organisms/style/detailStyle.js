@@ -12,7 +12,7 @@ export const Section = styled.section`
 `;
 
 export const Title = styled.h1`
-   font-family: 'Airbnb Cereal App Medium';
+   text-transform: capitalize;
    color: var(--color-2);
    text-align: center;
    margin-bottom: 60px;
@@ -79,14 +79,12 @@ export const Item = styled.div`
 `;
 
 export const Heading = styled.h3`
-   font-family: 'Airbnb Cereal App Medium';
    color: var(--color-3);
    margin-bottom: 20px;
 `;
 
 export const Ingredients = styled.p`
    margin: 0;
-   font-family: 'Airbnb Cereal App Light';
    white-space: pre-line;
    text-transform: capitalize;
 `;
@@ -131,6 +129,7 @@ export const Profile = styled.img`
 `;
 
 export const Info = styled.div`
+   text-transform: capitalize;
    display: flex;
    flex-direction: column;
    justify-content: center;

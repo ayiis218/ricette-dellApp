@@ -3,7 +3,6 @@ import '@fontsource/inter';
 
 const Auth = createGlobalStyle`
   @font-face {
-    font-family: 'Airbnb Cereal App Medium';
     src: url(fonts/AirbnbCereal_W_Md.woff) format('woff');
   }
   .full,
@@ -25,7 +24,6 @@ const Auth = createGlobalStyle`
     color: #696F79;
   }
   .forgot {
-    font-family: 'Airbnb Cereal App Medium';
     color: #999999;
     font-weight: 500;
     font-size: 14px;
@@ -35,7 +33,6 @@ const Auth = createGlobalStyle`
     color: #888888;
   }
   .alternative {
-    font-family: 'Airbnb Cereal App Medium';
     color: #999999;
     font-weight: 500;
     font-size: 14px;

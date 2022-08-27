@@ -1,13 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
 import ContentLoader from 'react-content-loader';
-import { useSelector, useDispatch } from 'react-redux/es/exports';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { getDetailRecipe } from '../../redux/action/recipe';
-// import { getRecipeComments } from '../redux/action/comment';
+import { getRecipeComments } from '../../redux/action/comment';
 
 import NavBar from '../../components/atoms/Navbar';
 import FormDetailRecipe from '../../components/organisms/FormRecipe/FormDetailRecipe';
+import Comment from '../../components/organisms/slideComment';
 import Footer from '../../components/Footer';
 
 const App = () => {
@@ -15,11 +16,13 @@ const App = () => {
    const dispatch = useDispatch();
    const navigate = useNavigate();
    const { detailRecipe } = useSelector((state) => state);
+   const { recipeComment } = useSelector((state) => state);
 
    useEffect(() => {
       document.title = `${process.env.REACT_APP_APP_NAME} - Detail Recipe`;
 
       dispatch(getDetailRecipe(id, navigate));
+      dispatch(getRecipeComments(id, navigate));
    }, []);
    return (
       <>
@@ -30,7 +33,10 @@ const App = () => {
          ) : detailRecipe.isError ? (
             <div>Error</div>
          ) : (
-            <FormDetailRecipe recipes={detailRecipe} />
+            <>
+               <FormDetailRecipe recipes={detailRecipe} />
+               <Comment comments={recipeComment} />
+            </>
          )}
          <Footer />
       </>

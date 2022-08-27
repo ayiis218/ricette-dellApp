@@ -17,6 +17,7 @@ import List from '../pages/recipe/recipe';
 import CreateRecipe from '../pages/recipe/AddRecipe';
 import DetailRecipe from '../pages/recipe/DetailRecipe';
 import UpdateRecipe from '../pages/recipe/UpdateRecipe';
+import Video from '../pages/recipe/video';
 import NotFound from '../pages/NotFound';
 
 const PrivateRoute = () => {
@@ -44,14 +45,15 @@ const router = () => {
             <Route path="/profile/" element={<PrivateRoute />}>
                <Route index element={<Profile me />} />
                <Route path=":id" element={<Profile />} />
-               <Route path="update" element={<UpdateProfile />} />
+               <Route path="update/:id" element={<UpdateProfile />} />
                <Route path="password" element={<UpdateProfile />} />
             </Route>
-            <Route path="/recipe" element={<PrivateRoute />}>
+            <Route path="/recipe/" element={<PrivateRoute />}>
                <Route index element={<List />} />
                <Route path="Add" element={<CreateRecipe />} />
                <Route path=":id" element={<DetailRecipe />} />
                <Route path="update/:id" element={<UpdateRecipe />} />
+               <Route path="video/:id" element={<Video />} />
             </Route>
             <Route path="*" element={<NotFound />} />
          </Routes>

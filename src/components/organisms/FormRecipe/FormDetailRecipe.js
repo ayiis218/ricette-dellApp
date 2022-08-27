@@ -45,7 +45,7 @@ function Detail({ recipes }) {
                   <Title>{recipe.name_recipe}</Title>
                   <Author>
                      <Profile
-                        src={User}
+                        src={`${process.env.REACT_APP_API_URL}${recipe.photo}`}
                         alt="{user}"
                         className="rounded-circle"
                         onError={(e) => {
@@ -61,14 +61,14 @@ function Detail({ recipes }) {
                               {recipe.name}
                            </Link>
                         </h6>
-                        <span title={recipe.date}>
-                           {moment(recipe.date).startOf('hour').fromNow()}
+                        <span>
+                           {moment(recipe.create_at).startOf('hour').fromNow()}
                         </span>
                      </Info>
                   </Author>
                   <div className="position-relative mb-7 text-center">
                      <Image
-                        src={`https://ricette-dellapp.herokuapp.com/${recipe.images}`}
+                        src={`${process.env.REACT_APP_API_URL}${recipe.images}`}
                         alt={recipe.name_recipe}
                         onError={(e) => {
                            e.target.src = Default;

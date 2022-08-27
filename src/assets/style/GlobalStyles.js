@@ -84,7 +84,6 @@ const GlobalStyles = createGlobalStyle`
     font-size: 20px;
     color: var(--color-2);
     font-weight: 500;
-    font-family: 'Airbnb Cereal App Medium';
     text-transform: capitalize;
   }
 
@@ -99,7 +98,6 @@ const GlobalStyles = createGlobalStyle`
   .navbar .nav-item .nav-link {
     color: var(--color-2);
     text-transform: capitalize;
-    font-family: 'Airbnb Cereal App Medium';
     font-size: 16px;
     font-weight: 400;
     padding: 5px 0;
@@ -140,7 +138,6 @@ const GlobalStyles = createGlobalStyle`
   .navbar .nav-auth a {
     text-decoration: none;
     color: var(--color-1);
-    font-family: 'Airbnb Cereal App Light';
     font-weight: 600;
     font-size: 18px;
   }
@@ -148,7 +145,6 @@ const GlobalStyles = createGlobalStyle`
   .navbar .nav-inverse a {
     text-decoration: none;
     color: var(--color-2);
-    font-family: 'Airbnb Cereal App Light';
     font-weight: 600;
     font-size: 18px;
   }
@@ -193,7 +189,6 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .nav-tabs .nav-link {
-    font-family: 'Airbnb Cereal App Medium';
     color: #666666;
     border: 0;
 
@@ -208,7 +203,6 @@ const GlobalStyles = createGlobalStyle`
   }
   
   .nav-tabs .nav-link.active {
-    font-family: 'Airbnb Cereal App Medium';
     color: #000000;
     border: 0;
     border-radius: 0;

@@ -64,9 +64,7 @@ const Add = () => {
    };
 
    const handleChange = (e) => {
-      const fileUploaded = e.target.files[0];
-      document.getElementById('customBtn').innerHTML = fileUploaded.name;
-      setImage(fileUploaded);
+      setImage(e.target.files[0]);
    };
 
    const handleSubmit = (e) => {

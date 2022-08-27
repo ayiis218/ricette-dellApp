@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import ContentLoader from 'react-content-loader';
 import jwt_decode from 'jwt-decode';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getDetailUser } from '../../redux/action/user';
 
@@ -15,7 +15,7 @@ function FormProfile({ me = false }) {
    const token = localStorage.getItem('token');
    const decoded = jwt_decode(token);
 
-   const { id_users } = useParams();
+   const id_users = decoded.id_users;
    const dispatch = useDispatch();
    const { detailUser } = useSelector((state) => state);
 
@@ -24,7 +24,7 @@ function FormProfile({ me = false }) {
          me ? 'My Profile' : 'Profile'
       }`;
 
-      const userId = id_users || decoded.id_users;
+      const userId = id_users;
       dispatch(getDetailUser(userId));
    }, []);
 
@@ -36,9 +36,12 @@ function FormProfile({ me = false }) {
          ) : detailUser.isError ? (
             <div>Error</div>
          ) : (
-            <Profile users={detailUser} me={(me = true)} />
+            <>
+               <Profile users={detailUser} me={(me = true)} />
+               <NavProfile profile={detailUser} me={me} />
+            </>
          )}
-         <NavProfile me={me} profile={detailUser} />
+
          <Footer />
       </>
    );

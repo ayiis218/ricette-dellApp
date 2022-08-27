@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Row, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import Alert from 'sweetalert2';
+import alert from 'sweetalert2';
 
 import { login } from '../../../redux/action/auth';
-
 import AuthStyles from '../../style/AuthStyles';
 import Picture from '../../PictureSlide';
 
@@ -14,11 +13,15 @@ const FormLogin = (props) => {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
 
+   useEffect(() => {
+      document.title = `${process.env.REACT_APP_APP_NAME} - Login Page`;
+   }, []);
+
    const handleLogin = (e) => {
       e.preventDefault();
 
       if (!email || !password) {
-         Alert.fire({
+         alert.fire({
             title: 'Error!',
             text: 'All field must be filled!',
             icon: 'error',
@@ -29,13 +32,13 @@ const FormLogin = (props) => {
             .then((res) => {
                localStorage.setItem('token', res?.data?.token);
                if (res.data.token === undefined) {
-                  Alert.fire({
+                  alert.fire({
                      title: 'Failed!',
                      text: 'incorrect Email',
                      icon: 'error',
                   });
                } else {
-                  Alert.fire({
+                  alert.fire({
                      title: 'Success!',
                      text: 'Login Success',
                      icon: 'success',
@@ -44,7 +47,7 @@ const FormLogin = (props) => {
                }
             })
             .catch((err) => {
-               Alert.fire({
+               alert.fire({
                   title: 'Error',
                   text: `incorrect Password`,
                   icon: 'error',

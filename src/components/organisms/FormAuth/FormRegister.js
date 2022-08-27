@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Row, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import Alert from 'sweetalert2';
+import alert from 'sweetalert2';
 
 import { register } from '../../../redux/action/auth';
 import AuthStyles from '../../style/AuthStyles';
@@ -16,18 +16,22 @@ const FormRegister = () => {
    const [phone, setPhone] = useState('');
    const [repass, setRePass] = useState('');
 
-   const onSubmit = (e) => {
+   useEffect(() => {
+      document.title = `${process.env.REACT_APP_APP_NAME} - Register Page`;
+   }, []);
+
+   const handleSubmit = (e) => {
       e.preventDefault();
       const data = name || email || phone || password || repass;
 
       if (!data) {
-         Alert.fire({
+         alert.fire({
             title: 'Error!',
             text: 'All field must be filled!',
             icon: 'error',
          });
       } else if (password !== repass) {
-         Alert.fire({
+         alert.fire({
             title: 'Error!',
             text: 'Password incorrect, please check again!',
             icon: 'error',
@@ -37,13 +41,13 @@ const FormRegister = () => {
          register({ name, email, password, phone, repass })
             .then((res) => {
                if (res.data.code === 500) {
-                  Alert.fire({
+                  alert.fire({
                      icon: 'error',
                      title: 'Oops..',
                      text: res.message,
                   });
                } else {
-                  Alert.fire({
+                  alert.fire({
                      icon: 'success',
                      title: `Register success`,
                   });
@@ -51,7 +55,7 @@ const FormRegister = () => {
                }
             })
             .catch((err) => {
-               Alert.fire({
+               alert.fire({
                   title: 'Error',
                   text: 'Duplicate Email',
                   icon: 'error',
@@ -78,7 +82,7 @@ const FormRegister = () => {
                      Create new account to access all features
                   </span>
                   <hr className="separator" />
-                  <Form className="w-100 mb-1 mt-0" onSubmit={onSubmit}>
+                  <Form className="w-100 mb-1 mt-0" onSubmit={handleSubmit}>
                      <FormGroup className="mb-2 label">
                         <Label for="name" className="mb-1">
                            Name

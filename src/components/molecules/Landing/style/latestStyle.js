@@ -5,11 +5,11 @@ export const Section = styled.section`
 `;
 
 export const Title = styled.h2`
+   text-transform: capitalize;
    border-left: 12px solid var(--secondary-color);
    margin: 0 0 0 50px;
    padding: 15px;
    display: flex;
-   font-family: 'Airbnb Cereal App Medium';
    color: var(--color-3);
 
    @media screen and (max-width: 576px) {
@@ -86,8 +86,8 @@ export const Image = styled.img`
 `;
 
 export const TitleRecipe = styled.h1`
+   text-transform: capitalize;
    margin-left: 50px;
-   font-family: 'Airbnb Cereal App Medium';
    color: var(--color-3);
    width: 70%;
 
@@ -121,7 +121,6 @@ export const Border = styled.hr`
 
 export const DetailRecipe = styled.p`
    margin-left: 50px;
-   font-family: 'Airbnb Cereal App Light';
    color: var(--color-3);
    width: 65%;
    font-size: 18px;

@@ -13,7 +13,6 @@ export const Title = styled.h2`
    margin: 0 0 0 50px;
    padding: 15px;
    display: flex;
-   font-family: 'Airbnb Cereal App Medium';
    color: var(--color-3);
 
    @media screen and (max-width: 576px) {
