@@ -48,21 +48,36 @@ REACT_APP_API_URL = [API_URL]
 <td><image src="https://i.postimg.cc/ZqRgm0J9/login.png" alt="" width=650/></td>
 </tr>
 <tr>
+<td><h4 style="margin-buttom:8px">edit profile</h4></td>
+<td><h4 style="margin-buttom:8px"></h4></td>
+</tr>
+<tr>
+<td><image src="https://i.postimg.cc/NfKzjxhw/edit-profile.png" alt="" width=650></td>
+<td><image src="" alt="" width=650/></td>
+</tr>
+<tr>
 <td><h4 style="margin-buttom:8px">Profile</h4></td>
 <td><h4 style="margin-buttom:8px">List</h4></td>
 </tr>
 <tr>
 <td><image src="https://i.postimg.cc/T1TnVtJL/profile.png" alt="" width=650/></td>
 <td><image src="https://i.postimg.cc/FRVLHjX9/list.png" alt="" width=500/></td>
-
+</tr>
+<tr>
+<td><h4 style="margin-buttom:8px">create Recipe</h4></td>
+<td><h4 style="margin-buttom:8px">Update Recipe</h4></td>
+</tr>
+<tr>
+<td><image src="https://i.postimg.cc/fR0pBf5v/add.png" alt="" width=650/></td>
+<td><image src="https://i.postimg.cc/qRpFBVrm/update.png" alt="" width=650/></td>
 </tr>
 <tr>
 <td><h4 style="margin-buttom:8px">Detail Recipe</h4></td>
-<td><h4 style="margin-buttom:8px">Create Recipe</h4></td>
+<td><h4 style="margin-buttom:8px">video Recipe</h4></td>
 </tr>
 <tr>
-<td><image src="https://i.postimg.cc/4dgcGWML/detail.png" alt="" width=650/></td>
-<td><image src="https://i.postimg.cc/HkwfpfGM/add.png" alt="" width=650/></td>
+<td><image src="https://i.postimg.cc/j2F3hD79/detail.png" alt="" width=650/></td>
+<td><image src="https://i.postimg.cc/0NsWZRz8/video.png" alt="" width=650/></td>
 </tr>
 <tr>
 <td colspan="2"><h4 style="margin-buttom:8px">Landing</h4></td>
