@@ -17,7 +17,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Create application using React JS.
+Ricette dellApp is an application created to search for recipes and share a recipe with the public
 
 ### Built With
 This app was built with some technologies below:
