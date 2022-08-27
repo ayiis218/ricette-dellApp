@@ -51,26 +51,28 @@ const Date = styled.p`
 `;
 
 function Video({ recipe }) {
-   console.log(recipe.data);
+   console.log(recipe?.data);
    return (
       <main className="col-12 col-lg-8">
-         <Row className="vh-100">
-            <Left className="col-12">
-               <IFrame className="mx-1 mx-sm-3 mx-md-5">
-                  <iframe
-                     width="560"
-                     height="315"
-                     src="https://www.youtube.com/embed/OGtn3u23Yjw"
-                     title="YouTube video player"
-                     frameborder="0"
-                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                     allowfullscreen
-                  ></iframe>
-                  <Title>{recipe?.data?.name_recipe}</Title>
-                  <Date>{moment(recipe?.data?.create_at).fromNow()}</Date>
-               </IFrame>
-            </Left>
-         </Row>
+         {recipe.data.map((item) => (
+            <Row className="vh-100">
+               <Left className="col-12">
+                  <IFrame className="mx-1 mx-sm-3 mx-md-5">
+                     <iframe
+                        width="560"
+                        height="315"
+                        src={item.video}
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                     ></iframe>
+                     <Title>{item.name_recipe}</Title>
+                     <Date>{moment(item.create_at).fromNow()}</Date>
+                  </IFrame>
+               </Left>
+            </Row>
+         ))}
       </main>
    );
 }
