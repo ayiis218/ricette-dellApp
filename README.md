@@ -97,7 +97,7 @@ REACT_APP_API_URL = [API_URL]
 <td colspan="2"><h4 style="margin-buttom:8px">Landing</h4></td>
 </tr>
 <tr>
-<td><image src="https://i.postimg.cc/vmDjJCRR/landing1.png" alt="" width=650/></td>
+<td><image src="" alt="" width=650/></td>
 <td><image src="https://i.postimg.cc/9M7kMTFJ/landing2.png" alt="" width=650/></td>
 </tr>
 </table>
