@@ -33,6 +33,10 @@ This app was built with some technologies below:
 ```
 git clone https://github.com/ayiis218/ricette-dellApp.git
 ```
+- Go to
+```
+cd ricette-dellApp
+```
 - Install Module
 
 ```
@@ -101,6 +105,17 @@ REACT_APP_API_URL = [API_URL]
 <td><image src="https://i.postimg.cc/9M7kMTFJ/landing2.png" alt="" width=650/></td>
 </tr>
 </table>
+
+## Related Project
+:rocket: [`Backend ricette-dellApp`](https://github.com/ayiis218/ricette-dellApp-backend.git)
+
+:rocket: [`Frontend ricette-dellApp](https://github.com/ayiis218/ricette-dellApp)
+
+:rocket: [`Web Service`](https://ricette-dellapp.herokuapp.com/)
+
+:rocket: [`Demo ricette-dellApp`](https://ricette-dellapp-1mlr4xyp8-ayiis218.vercel.app/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Contact
 
