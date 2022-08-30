@@ -113,7 +113,6 @@ REACT_APP_API_URL = [API_URL]
 
 :rocket: [`Web Service`](https://ricette-dellapp.herokuapp.com/)
 
-:rocket: [`Demo ricette-dellApp`](https://ricette-dellapp-1mlr4xyp8-ayiis218.vercel.app/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
