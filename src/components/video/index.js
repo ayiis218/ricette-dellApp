@@ -75,7 +75,7 @@ function List({ recipe }) {
                         </Link>
                         <Author>
                            <Link
-                              to={`/profile/${item.id_users}`}
+                              to={`/recipe/${item.id_recipe}`}
                               style={{ color: '#AAA', textDecoration: 'none' }}
                            >
                               {item.name_recipe}{' '}
