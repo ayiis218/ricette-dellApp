@@ -1,25 +1,17 @@
-# Ricette-dellApp
 <!-- PROJECT LOGO -->
 
 <div align="center">
 
 <img src="https://i.postimg.cc/yx8pCmKW/icon.png" align="center" width="250" height="auto" />
-
+  <h1>Ricette dellApp</h1>
+  
+  [![license](https://img.shields.io/github/license/dec0dOS/amazing-github-template.svg?style=flat-square)](LICENSE)
+  
+  <h2>About The Project</h2>
+  Riette dellApp is an application website for finding a recipe tutorial. In addition, users can also access the application website to share tutorial recipes by registering as a user in the application. This web application was developed using react js  
 </div>
 
-<div align="center">
-
-<br />
-
-[![license](https://img.shields.io/github/license/dec0dOS/amazing-github-template.svg?style=flat-square)](LICENSE)
-
-</div>
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-Ricette dellApp is an application created to search for recipes and share a recipe with the public
-
-### Built With
+## Built With
 This app was built with some technologies below:
 - [React JS](https://reactjs.com/)
 - [reactstrap](https://reactstrap.github.io/)
@@ -28,7 +20,7 @@ This app was built with some technologies below:
 - [Axios](https://axios-http.com/docs/intro)
 - [Redux](https://redux.js.org/)
 
-### Installation
+## Installation
 - Clone my repositories
 ```
 git clone https://github.com/ayiis218/ricette-dellApp.git
@@ -113,14 +105,12 @@ REACT_APP_API_URL = [API_URL]
 
 :rocket: [`Web Service`](https://ricette-dellapp.herokuapp.com/)
 
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## Contact
 
 email : ayiis.218@gmail.com
 
-github Link: https://github.com/ayiis218
+project Link: https://github.com/ayiis218/ricette-dellApp.git
 
 ## License
 Distributed under the [MIT](/LICENSE) License.
+<p align="right">(<a href="#top">back to top</a>)</p>
