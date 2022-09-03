@@ -30,7 +30,7 @@ function ListPopular({ recipes }) {
                recipes.data.map((item) => (
                   <div className="justify-content-center" key={item.id_recipe}>
                      <Link
-                        to={`/recipe/${item.id_recipe}`}
+                        to={`/recipes/${item.id_recipe}`}
                         style={{ textDecoration: 'none' }}
                      >
                         <Row>

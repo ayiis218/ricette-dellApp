@@ -13,7 +13,7 @@ import Login from '../pages/Auth/Login';
 import Register from '../pages/Auth/Register';
 import Profile from '../pages/user/Profile';
 import UpdateProfile from '../pages/user/UpdateProfile';
-import List from '../pages/recipe/recipe';
+import List from '../pages/recipe/recipes';
 import CreateRecipe from '../pages/recipe/AddRecipe';
 import DetailRecipe from '../pages/recipe/DetailRecipe';
 import UpdateRecipe from '../pages/recipe/UpdateRecipe';
@@ -48,7 +48,7 @@ const router = () => {
                <Route path="update/:id" element={<UpdateProfile />} />
                <Route path="password" element={<UpdateProfile />} />
             </Route>
-            <Route path="/recipe/" element={<PrivateRoute />}>
+            <Route path="/recipes/" element={<PrivateRoute />}>
                <Route index element={<List />} />
                <Route path="Add" element={<CreateRecipe />} />
                <Route path=":id" element={<DetailRecipe />} />

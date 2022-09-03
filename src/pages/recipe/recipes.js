@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import ContentLoader from 'react-content-loader';
 import { useSelector, useDispatch } from 'react-redux';
-import { getListRecipe } from '../../../redux/action/recipe';
-
-import Navbar from '../../atoms/Navbar';
-import Pagination from '../../Pagination';
-import Footer from '../../Footer';
-import icon from '../../../assets/icons/search.svg';
-import Default from '../../../assets/img/original.jpg';
+import { getListRecipe } from '../../redux/action/recipe';
+import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import Navbar from '../../components/atoms/Navbar';
+// import Pagination from '../../components/Pagination';
+import Footer from '../../components/Footer';
+import icon from '../../assets/icons/search.svg';
+import Default from '../../assets/img/original.jpg';
 import {
    Main,
    Input,
@@ -20,7 +20,7 @@ import {
    TitleRecipe,
    Images,
    Button,
-} from '../style/recipeStyle';
+} from '../../components/organisms/style/recipeStyle';
 
 const List = () => {
    const navigate = useNavigate();
@@ -37,7 +37,7 @@ const List = () => {
    }, []);
 
    useEffect(() => {
-      let url = `/recipes?`;
+      let url = `recipes?`;
 
       setSearchQuery('');
       if (queryParams.get('search')) {
@@ -59,7 +59,7 @@ const List = () => {
    }, [dispatch, navigate, queryParams]);
 
    const applyFilter = (page = '') => {
-      let url = '/recipe?';
+      let url = '/recipes?';
       if (searchQuery) {
          url += `&search=${searchQuery}`;
       }
@@ -116,8 +116,8 @@ const List = () => {
                      value={sortQuery}
                   >
                      <option value="">Sort By</option>
-                     <option value="title">Title</option>
-                     <option value="date">Date</option>
+                     <option value="name_recipe">name recipe</option>
+                     <option value="id_recipe">ID</option>
                   </select>
                   <Button className="ms-2" type="submit">
                      Sort
@@ -132,10 +132,10 @@ const List = () => {
                      value={limitQuery}
                   >
                      <option value="">Limit</option>
-                     <option value="1">1</option>
-                     <option value="2">2</option>
-                     <option value="3">3</option>
-                     <option value="4">4</option>
+                     <option value="5">5</option>
+                     <option value="7">7</option>
+                     <option value="9">9</option>
+                     <option value="11">11</option>
                   </select>
                   <Button className="ms-2" type="submit">
                      Limit
@@ -183,13 +183,32 @@ const List = () => {
                )}
             </Section>
          </Latest>
+         <div className="d-flex justify-content-center">
+            <Pagination size="md" aria-label="Page">
+               <PaginationItem previous>
+                  <PaginationLink previous />
+               </PaginationItem>
+               <PaginationItem>
+                  <PaginationLink>1</PaginationLink>
+               </PaginationItem>
+               <PaginationItem>
+                  <PaginationLink>2</PaginationLink>
+               </PaginationItem>
+               <PaginationItem>
+                  <PaginationLink>3</PaginationLink>
+               </PaginationItem>
+               <PaginationItem>
+                  <PaginationLink next />
+               </PaginationItem>
+            </Pagination>
+         </div>
 
-         {listRecipe.data.length && (
+         {/* {listRecipe.data.length && (
             <Pagination
                pagination={listRecipe.pagination}
                applyFilter={applyFilter}
             />
-         )}
+         )} */}
 
          <Footer />
       </>

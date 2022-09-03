@@ -50,7 +50,7 @@ function Latest({ recipes }) {
                   <DetailRecipe>{recipe.ingredients}</DetailRecipe>
                   <Button
                      text="learn more"
-                     link={`/recipe/${recipe.id_recipe}`}
+                     link={`/recipes/${recipe.id_recipe}`}
                   />
                </Col>
             </Row>

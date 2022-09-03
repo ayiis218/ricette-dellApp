@@ -108,3 +108,32 @@ export const Images = styled.img`
       margin-left: 28px;
    }
 `;
+
+export const Button = styled.button`
+background-color: var(--secondary-color);
+color: var(--color-1);
+padding: 0 15px;
+border: none;
+border-radius: 4px;
+font-size: 16px;
+text-transform: capitalize;
+transition: all 0.5 ease;
+font-weight: 500;
+text-decoration: none;
+text-align: center;
+
+&:focus {
+  box-shadow: var(--shadow-black-300);
+}
+
+&:hover {
+  cursor: pointer;
+  color: var(--main-color);
+  background-color: #cea905;
+}
+
+@media screen and (max-width: 576px) {
+  margin: 0 auto;
+  display: block;
+}
+`;

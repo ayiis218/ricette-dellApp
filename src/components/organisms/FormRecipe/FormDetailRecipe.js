@@ -89,7 +89,7 @@ function Detail({ recipes }) {
                   </Item>
                   <Item>
                      <Heading>Video Step</Heading>
-                     <Link to={`/recipe/video/${recipe.id_recipe}`}>
+                     <Link to={`/recipes/video/${recipe.id_recipe}`}>
                         <Video>
                            <Play src={play} alt="Play" />
                         </Video>

@@ -134,7 +134,7 @@ function MyRecipe({ me, myRecipe }) {
                      <Card lg="3">
                         <div className="w-100 h-100 d-flex align-items-end">
                            <Link
-                              to={`/recipe/${item.id_recipe}`}
+                              to={`/recipes/${item.id_recipe}`}
                               style={{ textDecoration: 'none' }}
                            >
                               <Title>{item.name_recipe}</Title>
@@ -150,7 +150,7 @@ function MyRecipe({ me, myRecipe }) {
                                  {me && (
                                     <>
                                        <Link
-                                          to={`/recipe/update/${item.id_recipe}`}
+                                          to={`/recipes/update/${item.id_recipe}`}
                                           className="btn-edit"
                                        >
                                           <i
