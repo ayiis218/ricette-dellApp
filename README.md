@@ -7,7 +7,7 @@
   
   [![license](https://img.shields.io/github/license/dec0dOS/amazing-github-template.svg?style=flat-square)](LICENSE)
   </br>
-   <a href="https://ricette-dellapp-pjayedd8t-ayiis218.vercel.app/">View Demo</a>
+   <a href="https://ricette-dellapp-webapp.vercel.app/">View Demo</a>
   <h2>About The Project</h2>
   Riette dellApp is an application website for finding a recipe tutorial. In addition, users can also access the application website to share tutorial recipes by registering as a user in the application. This web application was developed using react js  
 </div>
