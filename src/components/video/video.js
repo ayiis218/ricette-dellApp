@@ -25,12 +25,12 @@ const IFrame = styled.div`
 `;
 
 const Title = styled.h2`
+   text-transform: capitalize;
    width: 80%;
    margin-top: 30px;
 
    font-size: 28px;
    line-height: 30px;
-   font-family: 'Airbnb Cereal App Medium';
 
    @media screen and (max-width: 576px) {
       font-size: 24px;
@@ -40,7 +40,6 @@ const Title = styled.h2`
 
 const Date = styled.p`
    font-size: 18px;
-   font-family: 'Airbnb Cereal App Medium';
    margin-top: 5px;
    color: #aaaaaa;
 
