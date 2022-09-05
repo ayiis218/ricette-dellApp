@@ -20,7 +20,7 @@ const Image = styled.img`
 `;
 
 const Name = styled.h5`
-text-transform: uppercase;
+   text-transform: capitalize;
    margin-top: 7px;
    margin-left: -15px;
    font-size: 22px;
@@ -32,7 +32,7 @@ text-transform: uppercase;
 `;
 
 const Author = styled.p`
-   text-transform: uppercase;
+   text-transform: capitalize;
    margin-top: 15px;
    margin-left: -15px;
    font-size: 13px;
