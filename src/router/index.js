@@ -42,6 +42,12 @@ const router = () => {
             <Route path="/register">
                <Route index element={<Register />} />
             </Route>
+            <Route path="/recipes/:id">
+               <Route index element={<DetailRecipe />} />
+            </Route>
+            <Route path="/recipes/video/:id">
+               <Route index element={<Video />} />
+            </Route>
             <Route path="/profile/" element={<PrivateRoute />}>
                <Route index element={<Profile me />} />
                <Route path=":id" element={<Profile />} />
@@ -51,9 +57,7 @@ const router = () => {
             <Route path="/recipes/" element={<PrivateRoute />}>
                <Route index element={<List />} />
                <Route path="Add" element={<CreateRecipe />} />
-               <Route path=":id" element={<DetailRecipe />} />
                <Route path="update/:id" element={<UpdateRecipe />} />
-               <Route path="video/:id" element={<Video />} />
             </Route>
             <Route path="*" element={<NotFound />} />
          </Routes>

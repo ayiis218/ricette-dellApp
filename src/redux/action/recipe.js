@@ -21,7 +21,7 @@ export const getLatestRecipe = () => async (dispatch) => {
          payload: null,
       });
 
-      const res = await axios.get(`recipe/latest`);
+      const res = await axios.get(`recipe/latest?limit=7`);
 
       dispatch({
          type: GET_LATEST_RECIPE_SUCCESS,

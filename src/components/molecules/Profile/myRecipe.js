@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { TabPane, Row, Col } from 'reactstrap';
-import swal from 'sweetalert2';
+import alert from 'sweetalert2';
+import swal from 'sweetalert';
 import { deleteRecipe, getUserRecipes } from '../../../redux/action/recipe';
 import { useDispatch } from 'react-redux';
 import jwt_decode from 'jwt-decode';
@@ -87,7 +88,6 @@ function MyRecipe({ me, myRecipe }) {
    const dispatch = useDispatch();
    const token = localStorage.getItem('token');
    const decoded = jwt_decode(token);
-   const id = decoded.id_users;
 
    useEffect(() => {
       if (myRecipe) {
@@ -95,26 +95,26 @@ function MyRecipe({ me, myRecipe }) {
       }
    }, []);
 
-   const remove = () => {
+   const remove = (id_recipe) => {
       swal({
          title: 'Are you sure?',
-         text: 'Once deleted, you will not be able to recover this recipe',
+         text: 'you will not be able to recover this recipe',
          icon: 'warning',
          buttons: true,
          dangerMode: true,
       }).then((willDelete) => {
          if (willDelete) {
-            deleteRecipe({ id })
+            deleteRecipe(id_recipe)
                .then((res) => {
-                  swal({
+                  alert.fire({
                      title: 'Success!',
                      text: res.message,
                      icon: 'success',
                   });
-                  dispatch(getUserRecipes(id));
+                  dispatch(getUserRecipes(decoded.id_recipe));
                })
                .catch((err) => {
-                  swal({
+                  alert.fire({
                      title: 'Failed!',
                      text: err.response.data.message,
                      icon: 'error',
@@ -145,32 +145,31 @@ function MyRecipe({ me, myRecipe }) {
                                     e.target.src = Default;
                                  }}
                               />
-
-                              <Option>
-                                 {me && (
-                                    <>
-                                       <Link
-                                          to={`/recipes/update/${item.id_recipe}`}
-                                          className="btn-edit"
-                                       >
-                                          <i
-                                             className="far fa-edit"
-                                             title="Edit Recipe"
-                                          />
-                                       </Link>
-                                       <button
-                                          onClick={() => remove(item.id_recipe)}
-                                          className="btn-delete"
-                                       >
-                                          <i
-                                             className="far fa-trash-can"
-                                             title="Delete Recipe"
-                                          />
-                                       </button>
-                                    </>
-                                 )}
-                              </Option>
                            </Link>
+                           <Option>
+                              {me && (
+                                 <>
+                                    <Link
+                                       to={`/recipes/update/${item.id_recipe}`}
+                                       className="btn-edit"
+                                    >
+                                       <i
+                                          className="far fa-edit"
+                                          title="Edit Recipe"
+                                       />
+                                    </Link>
+                                    <button
+                                       onClick={() => remove(item.id_recipe)}
+                                       className="btn-delete"
+                                    >
+                                       <i
+                                          className="far fa-trash-can"
+                                          title="Delete Recipe"
+                                       />
+                                    </button>
+                                 </>
+                              )}
+                           </Option>
                         </div>
                      </Card>
                   </Col>

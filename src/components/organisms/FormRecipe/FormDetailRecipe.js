@@ -61,9 +61,7 @@ function Detail({ recipes }) {
                               {recipe.name}
                            </Link>
                         </h6>
-                        <span>
-                           {moment(recipe.create_at).startOf('hour').fromNow()}
-                        </span>
+                        <span>{moment(recipe.create_a).format('LL')}</span>
                      </Info>
                   </Author>
                   <div className="position-relative mb-7 text-center">

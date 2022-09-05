@@ -81,9 +81,9 @@ const Add = () => {
          formData.append('images', images);
       }
 
-      const data = name || ingredients || video || images;
+      const data = !name || !ingredients || !video;
 
-      if (!data) {
+      if (data) {
          alert.fire({
             title: 'Error!',
             text: 'All field must be filled!',
@@ -126,6 +126,7 @@ const Add = () => {
                      handleChange={handleChange}
                      hiddenFileInput={hiddenFileInput}
                      handleClick={handleClick}
+                     required
                   />
                   <Text
                      name="Title"

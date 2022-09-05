@@ -31,6 +31,14 @@ const List = () => {
    const [searchQuery, setSearchQuery] = useState('');
    const [limitQuery, setLimitQuery] = useState('');
    const [sortQuery, setSortQuery] = useState('');
+   const [page, setPage] = useState('');
+   console.log(page);
+
+   const onPage = (Page) => {
+      setPage(Page);
+      navigate(`?&search=${searchQuery}&limit=${limitQuery}&page=${Page}`);
+      getListRecipe(searchQuery, page, 8);
+   };
 
    useEffect(() => {
       document.title = `${process.env.REACT_APP_APP_NAME} - List Page`;
@@ -58,7 +66,7 @@ const List = () => {
       dispatch(getListRecipe(url, navigate));
    }, [dispatch, navigate, queryParams]);
 
-   const applyFilter = (page = '') => {
+   const applyFilter = () => {
       let url = '/recipes?';
       if (searchQuery) {
          url += `&search=${searchQuery}`;
@@ -132,10 +140,10 @@ const List = () => {
                      value={limitQuery}
                   >
                      <option value="">Limit</option>
+                     <option value="2">2</option>
                      <option value="5">5</option>
                      <option value="7">7</option>
                      <option value="9">9</option>
-                     <option value="11">11</option>
                   </select>
                   <Button className="ms-2" type="submit">
                      Limit
@@ -185,19 +193,19 @@ const List = () => {
          </Latest>
          <div className="d-flex justify-content-center">
             <Pagination size="md" aria-label="Page">
-               <PaginationItem previous>
+               <PaginationItem>
                   <PaginationLink previous />
                </PaginationItem>
-               <PaginationItem>
+               <PaginationItem onClick={() => onPage(1)}>
                   <PaginationLink>1</PaginationLink>
                </PaginationItem>
-               <PaginationItem>
+               <PaginationItem onClick={() => onPage(2)}>
                   <PaginationLink>2</PaginationLink>
                </PaginationItem>
-               <PaginationItem>
+               <PaginationItem onClick={() => onPage(3)}>
                   <PaginationLink>3</PaginationLink>
                </PaginationItem>
-               <PaginationItem>
+               <PaginationItem onClick={() => onPage(4)}>
                   <PaginationLink next />
                </PaginationItem>
             </Pagination>

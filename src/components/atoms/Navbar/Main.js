@@ -17,7 +17,7 @@ function Main({ isLogin }) {
                <NavItem>
                   <NavLink
                      tag={Link}
-                     to="/recipes?field=name_recipe&limit=11"
+                     to="/recipes?&limit=8"
                      active={location.pathname === '/recipes'}
                   >
                      list recipe
@@ -27,7 +27,7 @@ function Main({ isLogin }) {
                   <NavLink
                      tag={Link}
                      to="/recipes/add"
-                     active={location.pathname === '/recipe/add'}
+                     active={location.pathname === '/recipes/add'}
                   >
                      add recipe
                   </NavLink>

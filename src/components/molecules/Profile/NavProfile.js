@@ -50,6 +50,7 @@ function Profile({ me, profile }) {
                   to={'/profile'}
                   className={tab !== 'liked' && tab !== 'saved' ? 'active' : ''}
                   onClick={() => setTab('my')}
+                  style={{ color: '#574acd' }}
                >
                   My Recipe
                </NavLink>
@@ -64,6 +65,7 @@ function Profile({ me, profile }) {
                   //       : `/profile/${profile.data.id_users}?tab=saved`
                   // }
                   className={tab === 'saved' ? 'active' : ''}
+                  style={{ color: '#574acd' }}
                   onClick={() => setTab('saved')}
                >
                   Saved Recipe
@@ -79,6 +81,7 @@ function Profile({ me, profile }) {
                         : `/profile/${profile.data.id_users}?tab=liked`
                   } */
                   className={tab === 'liked' ? 'active' : ''}
+                  style={{ color: '#574acd' }}
                   onClick={() => setTab('liked')}
                >
                   Liked Recipe
