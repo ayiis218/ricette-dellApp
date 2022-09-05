@@ -24,7 +24,6 @@ const Name = styled.h5`
    margin-left: -15px;
    font-size: 22px;
    line-height: 0px;
-   font-family: 'Airbnb Cereal App Medium';
 
    &:hover {
       color: var(--secondary-color);
@@ -56,7 +55,7 @@ function List({ recipe }) {
             ) : (
                recipe.data.map((item, index) => (
                   <Card className="border-0" key={index}>
-                     <Link to={`/recipe/video/${item.id_recipe}`}>
+                     <Link to={`/recipes/video/${item.id_recipe}`}>
                         <Image
                            src={`${process.env.REACT_APP_API_URL}${item.images}`}
                            alt={item.name_recipe}
@@ -68,14 +67,14 @@ function List({ recipe }) {
 
                      <CardBody>
                         <Link
-                           to={`/recipe/video/${item.id_recipe}`}
+                           to={`/recipes/video/${item.id_recipe}`}
                            style={{ color: '#000', textDecoration: 'none' }}
                         >
                            <Name>{item.title}</Name>
                         </Link>
                         <Author>
                            <Link
-                              to={`/recipe/${item.id_recipe}`}
+                              to={`/recipes/${item.id_recipe}`}
                               style={{ color: '#AAA', textDecoration: 'none' }}
                            >
                               {item.name_recipe}{' '}
