@@ -70,14 +70,14 @@ function List({ recipe }) {
                            to={`/recipes/video/${item.id_recipe}`}
                            style={{ color: '#000', textDecoration: 'none' }}
                         >
-                           <Name>{item.title}</Name>
+                           <Name>{item.name_recipe}</Name>
                         </Link>
                         <Author>
                            <Link
                               to={`/recipes/${item.id_recipe}`}
                               style={{ color: '#AAA', textDecoration: 'none' }}
                            >
-                              {item.name_recipe}{' '}
+                              {item.name}{' '}
                            </Link>{' '}
                            - {moment(item.create_at).fromNow()}
                         </Author>
