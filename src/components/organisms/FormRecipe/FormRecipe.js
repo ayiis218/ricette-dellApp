@@ -156,7 +156,7 @@ const List = () => {
                         listRecipe.data.map((item) => (
                            <div className="d-flex justify-content-center">
                               <Link
-                                 to={`/recipe/${item.id_recipe}`}
+                                 to={`/recipes/${item.id_recipe}`}
                                  style={{ textDecoration: 'none' }}
                               >
                                  <Card lg="3">
