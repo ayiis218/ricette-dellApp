@@ -57,15 +57,15 @@ REACT_APP_API_URL = [API_URL]
 </tr>
 <tr>
 <td><image src="https://i.postimg.cc/QxvNTHb1/register.png" alt="" width=650></td>
-<td><image src="https://i.postimg.cc/ZqRgm0J9/login.png" alt="" width=650/></td>
+<td><image src="https://i.postimg.cc/FF7pqSF0/loginfood.png" alt="" width=650/></td>
 </tr>
 <tr>
 <td><h4 style="margin-buttom:8px">edit profile</h4></td>
-<td><h4 style="margin-buttom:8px"></h4></td>
+<td><h4 style="margin-buttom:8px"></h4>List Recipe</td>
 </tr>
 <tr>
-<td><image src="https://i.postimg.cc/NfKzjxhw/edit-profile.png" alt="" width=650></td>
-<td><image src="https://i.postimg.cc/FRVLHjX9/list.png" alt="" width=500/></td>
+<td><image src="https://i.postimg.cc/Y9p2XF5F/edit-profilefood.png" alt="" width=650></td>
+<td><image src="https://i.postimg.cc/g0zqKXBX/list.png" alt="" width=500/></td>
 </tr>
 <tr>
 <td colspan="2"><h4 style="margin-buttom:8px">Profile</h4></td>
@@ -88,7 +88,7 @@ REACT_APP_API_URL = [API_URL]
 </tr>
 <tr>
 <td><image src="https://i.postimg.cc/j2F3hD79/detail.png" alt="" width=650/></td>
-<td><image src="https://i.postimg.cc/0NsWZRz8/video.png" alt="" width=650/></td>
+<td><image src="https://i.postimg.cc/d1X2vWQr/video.png" alt="" width=650/></td>
 </tr>
 <tr>
 <td colspan="2"><h4 style="margin-buttom:8px">Landing</h4></td>
